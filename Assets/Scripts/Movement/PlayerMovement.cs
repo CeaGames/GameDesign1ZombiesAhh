@@ -3,7 +3,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float movespeed;
+
+    public float moveSpeed;
 
     public Transform orientation;
 
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MyInput();
+        SpeedControl();
     }
 
     private void MyInput()
@@ -37,11 +39,25 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
     }
 
-    private void MovePlayer() 
+    private void MovePlayer()
     {
         //movement direction
         MovementDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        rb.AddForce(MovementDirection.normalized * movespeed * 10f, ForceMode.Force);
+        rb.AddForce(MovementDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+    }
+
+    private void SpeedControl() 
+    {
+        Vector3 Speed = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+
+        //if you are faster than Speed
+        if (Speed.magnitude > moveSpeed) 
+        {
+            //calculate maxspeed
+            Vector3 maxSpeed = Speed.normalized * moveSpeed;
+            //apply maxspeed
+            rb.linearVelocity = new Vector3(maxSpeed.x, rb.linearVelocity.y, maxSpeed.z);
+        }
     }
 }
