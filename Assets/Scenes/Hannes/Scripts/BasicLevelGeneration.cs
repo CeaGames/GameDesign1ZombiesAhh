@@ -8,6 +8,7 @@ public class BasicLevelGeneration : MonoBehaviour
     public GameObject level1;
     public GameObject level2;
     //put in move levels when more designed
+    public GameObject roof;
     public int floorAmount;
 
 
@@ -48,6 +49,21 @@ public class BasicLevelGeneration : MonoBehaviour
                 }
                 locationHeight += 2.7f; //floorheight is 270cm
             }
+            //copy paste 'else if' here to add more floors
+            //change 'levelx' to levelname
+
+            if (i == (floorAmount - 1)) //adding roof
+            {
+                if (i % 2 == 0)
+                {
+                    Instantiate(roof, new Vector3(0, locationHeight, 0), Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(roof, new Vector3(0, locationHeight, 0), Quaternion.Euler(new Vector3(0, 180, 0)));
+                }
+            }
+
         }
     }
 

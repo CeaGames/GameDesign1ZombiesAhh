@@ -397,7 +397,8 @@ MonoBehaviour:
   groundLevel: {fileID: 919132149155446097, guid: 92cac6fc0e2f04b49bed9e1bb5ffb37d, type: 3}
   level1: {fileID: 919132149155446097, guid: 1470dc3d655a72444a746d95d838677e, type: 3}
   level2: {fileID: 919132149155446097, guid: 561ce27bd56708e4bacea5c78f9fb630, type: 3}
-  floorAmount: 1
+  roof: {fileID: 919132149155446097, guid: be9a01ee86c8dae4685d9b954d4a0c75, type: 3}
+  floorAmount: 4
 --- !u!4 &608142215
 Transform:
   m_ObjectHideFlags: 0
