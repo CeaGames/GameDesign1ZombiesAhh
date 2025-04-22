@@ -1,5 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< Updated upstream
 --- !u!1 &311869960961738150
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +152,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1360522666764255220
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +192,10 @@ Transform:
   - {fileID: 6841455018236802858}
   - {fileID: 6534438475436091648}
   - {fileID: 8125897300158882460}
+<<<<<<< Updated upstream
   - {fileID: 6807959731886219262}
+=======
+>>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &259297702553554042
