@@ -6,7 +6,6 @@ public class DoorBarricade : MonoBehaviour
 {
     public float hp;
 
-    private float _radius = 2.5f;
 
     void Start()
     {
@@ -16,7 +15,10 @@ public class DoorBarricade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Physics.OverlapSphere(transform.position, _radius);
+      if (hp < 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

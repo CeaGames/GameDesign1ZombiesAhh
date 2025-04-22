@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class zombieDetect : MonoBehaviour
 {
+    public GameObject doorframe;
+    public object doorcode;
+
     public float dpsFromZombies;
+
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -16,6 +20,9 @@ public class zombieDetect : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        transform.parent.GetComponent<DoorBarricade>().hp -= Time.deltaTime * dpsFromZombies;
+        if (other.gameObject.layer == 9) //zombie
+        {
+          doorframe.GetComponent<DoorBarricade>().hp -= Time.deltaTime * dpsFromZombies;
+        }
     }
 }
