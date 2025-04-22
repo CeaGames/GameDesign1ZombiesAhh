@@ -7,6 +7,10 @@ public class DoorBarricade : MonoBehaviour
     public float hp;
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+    private float _radius = 2.5f;
+>>>>>>> Stashed changes
 =======
     private float _radius = 2.5f;
 >>>>>>> Stashed changes
@@ -20,10 +24,14 @@ public class DoorBarricade : MonoBehaviour
     void Update()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       if (hp < 0)
         {
             Destroy(gameObject);
         }
+=======
+       // Physics.OverlapSphere(transform.position, _radius);
+>>>>>>> Stashed changes
 =======
        // Physics.OverlapSphere(transform.position, _radius);
 >>>>>>> Stashed changes
