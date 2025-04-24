@@ -6,6 +6,8 @@ public class Shoot : MonoBehaviour
 
     public float range = 100f;
 
+    public LayerMask layerMask;
+
     public Camera gunCamera;
     // Update is called once per frame
     void Update()
@@ -18,9 +20,10 @@ public class Shoot : MonoBehaviour
     private void Shooting() 
     {
         RaycastHit hit;
-        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out hit, range)) ;
+        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out hit, range, layerMask)) 
         {
             Debug.Log(hit.transform.name);
+            hit.transform.gameObject.SetActive(false);
         }
     }
 }
