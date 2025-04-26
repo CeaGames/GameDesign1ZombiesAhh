@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DoorBarricade : MonoBehaviour
 {
+    public GameObject door;
+
     public float hp;
 
     private float _radius = 2.5f;
@@ -19,7 +21,7 @@ public class DoorBarricade : MonoBehaviour
 
       if (hp < 0)
         {
-            Destroy(gameObject);
+            door.SetActive(false);
         }
 
     }
