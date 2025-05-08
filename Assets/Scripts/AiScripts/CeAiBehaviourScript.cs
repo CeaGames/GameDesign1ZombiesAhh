@@ -93,6 +93,6 @@ public class CeAiBehaviourScript : MonoBehaviour
             _doorCounter++;
             //Debug.Log(_doorCounter);
         }
-        Debug.Log(_nearestDoor.name);
+        //Debug.Log(_nearestDoor.name);
     }
 }
