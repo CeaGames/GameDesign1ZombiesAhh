@@ -86,7 +86,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5795257766231619011}
-  - component: {fileID: 9139289478017139241}
+  - component: {fileID: 4902818967641335727}
   - component: {fileID: 5559272399558444343}
   - component: {fileID: 2041914498912812173}
   - component: {fileID: 3638757579450066103}
@@ -115,7 +115,7 @@ Transform:
   - {fileID: 1755694326650362734}
   m_Father: {fileID: 6346712848732935254}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9139289478017139241
+--- !u!114 &4902818967641335727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 5570952966038507928}
   - component: {fileID: 6639922967925010880}
   - component: {fileID: 2502960912996591342}
-  - component: {fileID: 7416564239379869863}
+  - component: {fileID: 4914294930150983992}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: Untagged
@@ -464,7 +464,7 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &7416564239379869863
+--- !u!114 &4914294930150983992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
