@@ -82,10 +82,11 @@ public class CeAiBehaviourScriptCopy : MonoBehaviour
         _shortestDoorDistance = float.MaxValue;
         _nearestDoor = null;
 
+        // Remove inactive or null doors
+        _doors.RemoveAll(door => door == null || !door.gameObject.activeSelf);
+
         foreach (Transform door in _doors)
         {
-            if (door == null || !door.gameObject.activeSelf) continue;
-
             float distance = Vector3.Distance(transform.position, door.position);
 
             if (distance < _shortestDoorDistance && IsDoorReachable(door.position))
@@ -95,4 +96,5 @@ public class CeAiBehaviourScriptCopy : MonoBehaviour
             }
         }
     }
+
 }
