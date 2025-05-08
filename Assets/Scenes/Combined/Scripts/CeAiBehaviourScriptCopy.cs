@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -5,8 +6,8 @@ public class CeAiBehaviourScriptCopy : MonoBehaviour
 {
     [SerializeField] private Transform _playerT;
     [SerializeField] private NavMeshAgent _zobmieAgent;
-    [SerializeField] private Transform[] _doors;
 
+    private List<Transform> _doors = new List<Transform>();
     private Transform _nearestDoor = null;
     private int _doorCounter = 0;
     float _shortestDoorDistance = float.MaxValue;
@@ -14,12 +15,11 @@ public class CeAiBehaviourScriptCopy : MonoBehaviour
     void Start()
     {
         GameObject[] doorObjects = GameObject.FindGameObjectsWithTag("Door");
-        _doors = new Transform[doorObjects.Length];
 
         Debug.Log(doorObjects.Length);
-        for (int i = 0; i < doorObjects.Length; i++)
+        foreach (GameObject doorObj in doorObjects)
         {
-            _doors[i] = doorObjects[i].transform;
+            _doors.Add(doorObj.transform);
         }
     }
 
@@ -48,7 +48,6 @@ public class CeAiBehaviourScriptCopy : MonoBehaviour
             }
         }
     }
-
 
     bool IsPathReachable(Vector3 targetPosition)
     {
@@ -96,5 +95,4 @@ public class CeAiBehaviourScriptCopy : MonoBehaviour
             }
         }
     }
-
 }
