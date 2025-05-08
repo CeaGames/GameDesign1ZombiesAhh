@@ -6,38 +6,43 @@ public class CeAiBehaviourScriptCopy : MonoBehaviour
 {
     [SerializeField] private Transform _playerT;
     [SerializeField] private NavMeshAgent _zobmieAgent;
+    [SerializeField] private float speed = 1.5f;
 
-    private List<Transform> _doors = new List<Transform>();
+    public List<Transform> _doors = new List<Transform>();
+    public List<Transform> _totalDoors = new List<Transform>();
+
     private Transform _nearestDoor = null;
     private int _doorCounter = 0;
     float _shortestDoorDistance = float.MaxValue;
 
     void Start()
     {
-        GameObject[] doorObjects = GameObject.FindGameObjectsWithTag("Door");
+        /*GameObject[] doorObjects = GameObject.FindGameObjectsWithTag("Door");
 
         Debug.Log(doorObjects.Length);
         foreach (GameObject doorObj in doorObjects)
         {
             _doors.Add(doorObj.transform);
-        }
+            _totalDoors.Add(doorObj.transform);
+        }*/
     }
 
     void Update()
     {
+
         // Clean up if door was destroyed
-        if (_nearestDoor == null || !_nearestDoor.gameObject.activeSelf)
+        /*if (_nearestDoor == null || !_nearestDoor.gameObject.activeSelf)
         {
             _nearestDoor = null;
             _shortestDoorDistance = float.MaxValue;
-        }
+        }*/
 
         // Try pathing to player
         if (IsPathReachable(_playerT.position))
         {
             _zobmieAgent.SetDestination(_playerT.position);
         }
-        else
+        /*else
         {
             // Find nearest door
             GetNearestDoor();
@@ -46,7 +51,7 @@ public class CeAiBehaviourScriptCopy : MonoBehaviour
             {
                 _zobmieAgent.SetDestination(_nearestDoor.position);
             }
-        }
+        }*/
     }
 
     bool IsPathReachable(Vector3 targetPosition)

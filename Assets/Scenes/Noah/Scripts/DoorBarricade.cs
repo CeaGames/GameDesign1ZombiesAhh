@@ -6,24 +6,48 @@ using UnityEngine;
 public class DoorBarricade : MonoBehaviour
 {
     public float hp;
+    public float maxHp;
 
-    private float _radius = 2.5f;
+    public GameObject[] planks;
+
+    private bool hasGoneThroughCycle = false;
 
     void Start()
     {
-        
+        maxHp = hp;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-      if (hp < 0)
+        if (hp == maxHp)
         {
-            this.gameObject.SetActive(false);
-            //Destroy(this.gameObject);
+            planks[0].SetActive(true);
         }
 
+        if (hp < maxHp/1.5)
+        {
+            planks[0].SetActive(false);
+            planks[1].SetActive(true);
+        }
+
+        if (hp < maxHp/2)
+        {
+            planks[1].SetActive(false);
+            planks[2].SetActive(true);
+        }
+
+        if (hp < maxHp/4)
+        {
+            planks[2].SetActive(false);
+        }
+
+        if (hp < 0)
+        {
+            //this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            //this.gameObject.SetActive(false);
+        }
     }
+
 
 }
