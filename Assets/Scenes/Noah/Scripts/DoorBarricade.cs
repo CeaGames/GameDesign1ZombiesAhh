@@ -1,11 +1,10 @@
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class DoorBarricade : MonoBehaviour
 {
-    public GameObject door;
-
     public float hp;
 
     private float _radius = 2.5f;
@@ -21,7 +20,8 @@ public class DoorBarricade : MonoBehaviour
 
       if (hp < 0)
         {
-            door.SetActive(false);
+            this.gameObject.SetActive(false);
+            //Destroy(this.gameObject);
         }
 
     }
