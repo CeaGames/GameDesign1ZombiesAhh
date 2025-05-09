@@ -6,13 +6,11 @@ public class CeAiBehaviourScriptCopy : MonoBehaviour
 {
     [SerializeField] private Transform _playerT;
     [SerializeField] private NavMeshAgent _zobmieAgent;
-    [SerializeField] private float speed = 1.5f;
 
     public List<Transform> _doors = new List<Transform>();
     public List<Transform> _totalDoors = new List<Transform>();
 
     private Transform _nearestDoor = null;
-    private int _doorCounter = 0;
     float _shortestDoorDistance = float.MaxValue;
 
     void Start()

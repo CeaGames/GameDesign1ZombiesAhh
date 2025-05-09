@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: -5754084199372789682}
   - component: {fileID: -7511558181221131132}
   - component: {fileID: 2309434971762513324}
-  - component: {fileID: 5414982136213924413}
   m_Layer: 0
   m_Name: SM_LevelRoof
   m_TagString: Untagged
@@ -111,21 +110,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1660965835075250433, guid: b7fe4a772faeb694faba85688be5d85f, type: 3}
---- !u!114 &5414982136213924413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132149155446097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85fb7dd3b8313ea4f94b749241032f93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 6401559894805606394, guid: 5eee83d0a50080145810dcce8119fe9d, type: 3}
-  delay: 60
-  spawnPosition: {fileID: -8679921383154817045}
 --- !u!1001 &4693021168488192709
 PrefabInstance:
   m_ObjectHideFlags: 0

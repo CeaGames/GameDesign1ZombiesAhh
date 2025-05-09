@@ -10,8 +10,6 @@ public class DoorBarricade : MonoBehaviour
 
     public GameObject[] planks;
 
-    private bool hasGoneThroughCycle = false;
-
     void Start()
     {
         maxHp = hp;

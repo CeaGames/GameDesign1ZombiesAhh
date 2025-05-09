@@ -5,7 +5,6 @@ public class CeAiBehaviourScript : MonoBehaviour
 {
     [SerializeField] private Transform _playerT;
     [SerializeField] private NavMeshAgent _zobmieAgent;
-    [SerializeField] private float speed = 1.5f;
     [SerializeField] private Transform[] _doors;
 
     private Transform _nearestDoor = null;

@@ -13,7 +13,7 @@ public class lvlGenCopy : MonoBehaviour
 
 
     private int levelAmount = 3; //put in the amount of designed levels appart from ground level
-    private float locationHeight = 0f; //don't change unless you want to recreate UP
+    public float locationHeight = 0f; //don't change unless you want to recreate UP
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
