@@ -1,13 +1,19 @@
+using System.Collections.Generic;
+using NUnit.Framework;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    public float damage = 10f;
+    //make the list that holds items
+    [SerializeField] private List<GameObject> items = new List<GameObject>();
 
-    public float range = 100f;
+    //range of pickup
+    public float range = 5f;
 
+    //a layermask so you can only pickup items and not walls or zombies
     public LayerMask layerMask;
 
+    //the first person camera needed to center the ray
     public Camera gunCamera;
     // Update is called once per frame
     void Update()
@@ -17,13 +23,16 @@ public class Shoot : MonoBehaviour
             Shooting();
         }
     }
+
+    // shoot and if hit give the name in the console log, add it to your list and destroy the game object after that
     private void Shooting() 
     {
         RaycastHit hit;
         if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out hit, range, layerMask)) 
         {
             Debug.Log(hit.transform.name);
-            hit.transform.gameObject.SetActive(false);
+            items.Add(hit.transform.gameObject);
+            hit.collider.gameObject.SetActive(false);
         }
     }
 }
