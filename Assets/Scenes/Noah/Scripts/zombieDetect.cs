@@ -8,9 +8,8 @@ public class zombieDetect : MonoBehaviour
     public GameObject doorframe;
 
     public float dpsFromZombies;
-    public float hpFromPlayer;
 
-    private bool doorIsDestroyed = false;
+    private bool barricadeIsDestroyed = false;
 
     // Struct to hold zombie data
     private struct FrozenZombieData
@@ -26,41 +25,33 @@ public class zombieDetect : MonoBehaviour
     void Update()
     {
         // Door gets destroyed
-        if (!doorIsDestroyed && doorBarricade.hp <= 0)
+        if (!barricadeIsDestroyed && doorBarricade.hp <= 0)
         {
             RestoreZombieSpeeds();
-            doorIsDestroyed = true;
+            barricadeIsDestroyed = true;
         }
 
         // Door is being repaired
         if (doorBarricade.hp > 0)
         {
-            doorIsDestroyed = false;
+            barricadeIsDestroyed = false;
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (doorIsDestroyed) return;
+        if (barricadeIsDestroyed) return;
 
         if (other.gameObject.layer == 9) // zombie
         {
             doorBarricade.hp -= Time.deltaTime * dpsFromZombies;
         }
 
-        if (other.gameObject.layer == 6) // player
-        {
-            doorBarricade.hp += Time.deltaTime * hpFromPlayer;
-            if (doorBarricade.hp > doorBarricade.maxHp)
-            {
-                doorBarricade.hp = doorBarricade.maxHp;
-            }
-        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (doorIsDestroyed) return;
+        if (barricadeIsDestroyed) return;
 
         if (other.gameObject.layer == 9) // zombie
         {
