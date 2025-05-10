@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("UI Overlay on Death")]
     [SerializeField] private Image redScreenOverlay;
+    [SerializeField] private GameObject youAreDeadText;
 
     private float currentHealth;
     private float timer;
@@ -34,6 +35,10 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             Debug.LogWarning("Vignette not found in post processing profile.");
+        }
+        if (youAreDeadText != null)
+        {
+            youAreDeadText.SetActive(false);
         }
 
         UpdateVisuals();
@@ -101,6 +106,11 @@ public class PlayerHealth : MonoBehaviour
             var color = redScreenOverlay.color;
             color.a = 0.5f; // Fully red
             redScreenOverlay.color = color;
+        }
+
+        if (youAreDeadText != null) 
+        {
+            youAreDeadText.SetActive(true);
         }
 
         GetComponent<PlayerMovementCC>().enabled = false;
