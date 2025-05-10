@@ -44,7 +44,10 @@ public class Shoot : MonoBehaviour
         RaycastHit barricade;
         if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out barricade, range, doorFrameLayerMask))
         {
-            barricade.collider.gameObject.GetComponent<DoorBarricade>().hp += barricade.collider.gameObject.GetComponent<DoorBarricade>().maxHp / 3;
+            if(barricade.transform != null)
+            {
+                barricade.collider.gameObject.GetComponent<DoorBarricade>().hp += barricade.collider.gameObject.GetComponent<DoorBarricade>().maxHp / 3;
+            }
         }
     }
 }

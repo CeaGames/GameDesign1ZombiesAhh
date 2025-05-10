@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 684984286300903598}
   - component: {fileID: 7445505716084207041}
   - component: {fileID: 3584350675842805891}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: ZombieDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 3659210637219769053}
   - component: {fileID: 5003636494540248395}
   - component: {fileID: 5872154003308075588}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 9216287479032295521}
   - component: {fileID: 4920597347051611714}
   - component: {fileID: 3510333843262902983}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -379,7 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 814068511901491193}
   - component: {fileID: 8603855102001756192}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: DoorMesh
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 5580646432524093581}
   - component: {fileID: 3980168783814253098}
   - component: {fileID: 1690718814314259342}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: side (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -636,7 +636,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 4778073934125804534}
   - component: {fileID: 6474813027648915076}
   - component: {fileID: 9180269684323064354}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: plank (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -780,7 +780,7 @@ GameObject:
   - component: {fileID: 675430277449827189}
   - component: {fileID: 7695624492733582194}
   - component: {fileID: 281022498562569243}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: plank (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -888,7 +888,7 @@ GameObject:
   - component: {fileID: 3587362743121911330}
   - component: {fileID: 6044249368290325329}
   - component: {fileID: 2672400380228501234}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: plank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
