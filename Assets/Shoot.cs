@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     //make the list that holds items
-    [SerializeField] private List<GameObject> items = new List<GameObject>();
+    public List<GameObject> items = new List<GameObject>();
 
     //range of pickup
     public float range = 5f;
