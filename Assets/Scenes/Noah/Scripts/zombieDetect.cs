@@ -20,6 +20,11 @@ public class zombieDetect : MonoBehaviour
             RestoreZombieSpeeds();
             doorIsDestroyed = true;
         }
+
+        if (doorBarricade.hp > 0) 
+        {
+            doorIsDestroyed = false;
+        }
     }
 
     private void OnTriggerStay(Collider other)

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using NUnit.Framework;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Shoot : MonoBehaviour
@@ -41,7 +42,7 @@ public class Shoot : MonoBehaviour
         }
 
         RaycastHit barricade;
-        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out barricade, range, itemLayerMask))
+        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out barricade, range, doorFrameLayerMask))
         {
             barricade.collider.gameObject.GetComponent<DoorBarricade>().hp += barricade.collider.gameObject.GetComponent<DoorBarricade>().maxHp / 3;
         }
