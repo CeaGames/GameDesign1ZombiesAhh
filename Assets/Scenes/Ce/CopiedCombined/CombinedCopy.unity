@@ -1998,10 +1998,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 513342731825875547, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6346712848732935254, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.97
@@ -3244,14 +3240,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 273194634618247528, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1841.3134
-      objectReference: {fileID: 0}
-    - target: {fileID: 273194634618247528, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1739037192295875006, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 818.1203
@@ -3293,32 +3281,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5365420769580438716, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
-      propertyPath: delay
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5365420769580438716, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
       propertyPath: lvlGenScript
       value: 
       objectReference: {fileID: 608142216}
     - target: {fileID: 7277814281789410951, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
       propertyPath: m_Name
       value: CountDownSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 7277814281789410951, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8257983969259010632, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8257983969259010632, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
-      propertyPath: m_Color.g
-      value: 0.07046223
-      objectReference: {fileID: 0}
-    - target: {fileID: 8257983969259010632, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
-      propertyPath: m_Color.r
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
