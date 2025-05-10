@@ -30370,7 +30370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5365420769580438716, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
       propertyPath: delay
-      value: 170
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5365420769580438716, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
       propertyPath: lvlGenScript
