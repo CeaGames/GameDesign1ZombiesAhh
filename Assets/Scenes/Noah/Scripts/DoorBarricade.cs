@@ -45,9 +45,10 @@ public class DoorBarricade : MonoBehaviour
             planks[2].SetActive(false);
         }
 
-        if (hp <= 0)
+        if (hp < 0)
         {
-
+            //this.gameObject.GetComponent<BoxCollider>().enabled = false;
+            //this.gameObject.SetActive(false);
         }
     }
 
