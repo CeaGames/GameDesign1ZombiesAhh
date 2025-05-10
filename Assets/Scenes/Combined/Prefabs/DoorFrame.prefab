@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorBarricade: {fileID: 7659564185516332623}
   doorframe: {fileID: 2982534111236261776}
-  dpsFromZombies: 2
+  dpsFromZombies: 0.3
   hpFromPlayer: 3
 --- !u!1 &1305562390092864496
 GameObject:
