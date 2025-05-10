@@ -278,9 +278,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items: []
   range: 100
-  layerMask:
+  itemLayerMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 2048
+  doorFrameLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
   gunCamera: {fileID: 5570952966038507928}
 --- !u!1 &6402502952081425433
 GameObject:

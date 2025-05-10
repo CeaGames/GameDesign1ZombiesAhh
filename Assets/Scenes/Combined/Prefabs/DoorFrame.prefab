@@ -153,7 +153,6 @@ MonoBehaviour:
   doorframe: {fileID: 2982534111236261776}
   dpsFromZombies: 2
   hpFromPlayer: 3
-  ZombieShouldBeFast: 0
 --- !u!1 &1305562390092864496
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,8 +654,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ac5c1d65d8ae54b92e303915469f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 20
-  maxHp: 0
+  hp: 0
+  maxHp: 20
   planks:
   - {fileID: 9205708259502917277}
   - {fileID: 8789937252763508041}
