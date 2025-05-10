@@ -537,6 +537,63 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1001 &2954937761053612981
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1550061722836299098, guid: fde23dfb49eab614fa0c9db0b307ce47, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550061722836299098, guid: fde23dfb49eab614fa0c9db0b307ce47, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550061722836299098, guid: fde23dfb49eab614fa0c9db0b307ce47, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550061722836299098, guid: fde23dfb49eab614fa0c9db0b307ce47, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550061722836299098, guid: fde23dfb49eab614fa0c9db0b307ce47, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550061722836299098, guid: fde23dfb49eab614fa0c9db0b307ce47, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550061722836299098, guid: fde23dfb49eab614fa0c9db0b307ce47, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550061722836299098, guid: fde23dfb49eab614fa0c9db0b307ce47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550061722836299098, guid: fde23dfb49eab614fa0c9db0b307ce47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1550061722836299098, guid: fde23dfb49eab614fa0c9db0b307ce47, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924772959385581223, guid: fde23dfb49eab614fa0c9db0b307ce47, type: 3}
+      propertyPath: m_Name
+      value: stairsSign
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fde23dfb49eab614fa0c9db0b307ce47, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -545,3 +602,4 @@ SceneRoots:
   - {fileID: 1493948505}
   - {fileID: 184585114}
   - {fileID: 608142215}
+  - {fileID: 2954937761053612981}
