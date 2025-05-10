@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
-  range: 100
+  range: 3
   itemLayerMask:
     serializedVersion: 2
     m_Bits: 2048
