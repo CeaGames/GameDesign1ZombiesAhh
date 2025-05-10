@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 819242702756531224}
   m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.60521, y: 0.60521, z: 0.60521}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7393350373136453775}
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
-  range: 3
+  range: 4
   itemLayerMask:
     serializedVersion: 2
     m_Bits: 2048
@@ -804,6 +804,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26eaffe75babed94f860414212f09ad1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MouseSensX: 400
-  MouseSensY: 400
+  MouseSensX: 200
+  MouseSensY: 200
   orientation: {fileID: 7374595718508568992}

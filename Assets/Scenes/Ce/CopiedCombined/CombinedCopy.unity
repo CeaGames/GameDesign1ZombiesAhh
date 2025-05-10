@@ -21181,6 +21181,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.60521
       objectReference: {fileID: 0}
+    - target: {fileID: 4914294930150983992, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
+      propertyPath: MouseSensX
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4914294930150983992, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
+      propertyPath: MouseSensY
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 6346712848732935254, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.97
