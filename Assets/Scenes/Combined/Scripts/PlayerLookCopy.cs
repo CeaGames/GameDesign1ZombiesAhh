@@ -3,10 +3,12 @@ using UnityEngine;
 public class PlayerLookCopy : MonoBehaviour
 {
     //mouse sensitivity
-    public float MouseSensX = 400f;
-    public float MouseSensY = 400f;
+    public float MouseSensX;
+    public float MouseSensY;
 
     public Transform orientation;
+
+    public int startRotation;
 
     //camera rotation
     float xRotation;
@@ -18,6 +20,8 @@ public class PlayerLookCopy : MonoBehaviour
         //add an invisible cursor that is locked in the middle of your screen
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        yRotation = startRotation;
     }
 
     // Update is called once per frame
