@@ -889,7 +889,7 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: 2992971f52f5c1141ab811a311622fd8, type: 3}
   - {fileID: 919132149155446097, guid: 4975efbad0d7dd445bf9512e20a319c1, type: 3}
   roof: {fileID: 919132149155446097, guid: 32e8f26455598d5428603f03151a8a4b, type: 3}
-  floorAmount: 5
+  floorAmount: 2
   locationHeight: 0
 --- !u!4 &630770783 stripped
 Transform:
@@ -3276,6 +3276,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 273194634618247528, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1841.3134
+      objectReference: {fileID: 0}
+    - target: {fileID: 273194634618247528, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1739037192295875006, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
       propertyPath: m_LocalPosition.x
       value: 818.1203
@@ -3315,6 +3323,10 @@ PrefabInstance:
     - target: {fileID: 1739037192295875006, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365420769580438716, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
+      propertyPath: delay
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5365420769580438716, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
       propertyPath: lvlGenScript
