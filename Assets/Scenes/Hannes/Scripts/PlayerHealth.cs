@@ -72,7 +72,7 @@ public class PlayerHealth : MonoBehaviour
         float healthPercent = currentHealth / maxHealth;
 
         // Vignette gets more red as health decreases
-        vignette.intensity.value = Mathf.Lerp(0.4f, 1f, 1f - healthPercent);
+        vignette.intensity.value = Mathf.Lerp(0.3f, 0.7f, 1f - healthPercent);
         vignette.color.value = Color.red;
 
         // Red overlay alpha = 0 during life
