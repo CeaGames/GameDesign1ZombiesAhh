@@ -23,38 +23,29 @@ public class DoorBarricade : MonoBehaviour
             hp = maxHp;
         }
 
-        if (hp == maxHp)
+        if (hp > maxHp * 0.667)
         {
             planks[0].SetActive(true);
             planks[1].SetActive(true);
             planks[2].SetActive(true);
         }
-
-        if (hp < maxHp*0.667)
+        else if (hp > maxHp * 0.334)
         {
             planks[0].SetActive(false);
             planks[1].SetActive(true);
             planks[2].SetActive(true);
         }
-
-        if (hp < maxHp*0.334)
+        else if (hp > 0)
         {
             planks[0].SetActive(false);
             planks[1].SetActive(false);
             planks[2].SetActive(true);
         }
-
-        if (hp <= maxHp*0)
+        else
         {
             planks[0].SetActive(false);
             planks[1].SetActive(false);
             planks[2].SetActive(false);
-        }
-
-        if (hp < 0)
-        {
-            //this.gameObject.GetComponent<BoxCollider>().enabled = false;
-            //this.gameObject.SetActive(false);
         }
     }
 
