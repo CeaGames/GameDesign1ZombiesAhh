@@ -10,18 +10,30 @@ public class zombieDetect : MonoBehaviour
     public float dpsFromZombies;
     public float hpFromPlayer;
 
-    private Dictionary<NavMeshAgent, float> frozenZombies = new Dictionary<NavMeshAgent, float>();
     private bool doorIsDestroyed = false;
+
+    // Struct to hold zombie data
+    private struct FrozenZombieData
+    {
+        public NavMeshAgent agent;
+        public CeAiBehaviourScriptCopy aiScript;
+        public float originalSpeed;
+    }
+
+    // Store frozen zombies
+    private Dictionary<GameObject, FrozenZombieData> frozenZombies = new Dictionary<GameObject, FrozenZombieData>();
 
     void Update()
     {
+        // Door gets destroyed
         if (!doorIsDestroyed && doorBarricade.hp <= 0)
         {
             RestoreZombieSpeeds();
             doorIsDestroyed = true;
         }
 
-        if (doorBarricade.hp > 0) 
+        // Door is being repaired
+        if (doorBarricade.hp > 0)
         {
             doorIsDestroyed = false;
         }
@@ -52,11 +64,23 @@ public class zombieDetect : MonoBehaviour
 
         if (other.gameObject.layer == 9) // zombie
         {
-            NavMeshAgent agent = other.gameObject.GetComponent<NavMeshAgent>();
-            if (agent != null && !frozenZombies.ContainsKey(agent))
+            NavMeshAgent agent = other.GetComponent<NavMeshAgent>();
+            CeAiBehaviourScriptCopy aiScript = other.GetComponent<CeAiBehaviourScriptCopy>();
+
+            if (agent != null && aiScript != null && !frozenZombies.ContainsKey(other.gameObject))
             {
-                frozenZombies[agent] = agent.speed; // store original speed
-                agent.speed = 0;
+                FrozenZombieData data = new FrozenZombieData
+                {
+                    agent = agent,
+                    aiScript = aiScript,
+                    originalSpeed = agent.speed
+                };
+
+                frozenZombies.Add(other.gameObject, data);
+
+                agent.speed = 0f;
+                agent.enabled = false;
+                aiScript.enabled = false;
             }
         }
     }
@@ -65,12 +89,17 @@ public class zombieDetect : MonoBehaviour
     {
         foreach (var kvp in frozenZombies)
         {
-            NavMeshAgent agent = kvp.Key;
-            float originalSpeed = kvp.Value;
+            var data = kvp.Value;
 
-            if (agent != null)
+            if (data.agent != null)
             {
-                agent.speed = originalSpeed;
+                data.agent.enabled = true;
+                data.agent.speed = data.originalSpeed;
+            }
+
+            if (data.aiScript != null)
+            {
+                data.aiScript.enabled = true;
             }
         }
 

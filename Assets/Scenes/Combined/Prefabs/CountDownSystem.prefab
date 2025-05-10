@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 450}
-  m_SizeDelta: {x: 954.0172, y: 159.7581}
+  m_SizeDelta: {x: 1841.3134, y: 159.7581}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2652106507351434008
 CanvasRenderer:
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0.07046223, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -227,6 +227,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 6401559894805606394, guid: 5eee83d0a50080145810dcce8119fe9d, type: 3}
-  delay: 5
+  delay: 30
   lvlGenScript: {fileID: 0}
   countdownText: {fileID: 8257983969259010632}
