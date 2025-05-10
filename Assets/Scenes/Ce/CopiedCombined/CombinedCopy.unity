@@ -1998,26 +1998,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1889054775698051900, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2514932236353411330, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3615854959433803344, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5559272399558444343, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 1024
-      objectReference: {fileID: 0}
-    - target: {fileID: 6254099549116267751, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 6346712848732935254, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.97
@@ -2061,22 +2041,6 @@ PrefabInstance:
     - target: {fileID: 6402502952081425433, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402502952081425433, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402502952081425433, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8317264129802748874, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8512531662307032760, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3335,6 +3299,10 @@ PrefabInstance:
     - target: {fileID: 7277814281789410951, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
       propertyPath: m_Name
       value: CountDownSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277814281789410951, guid: 2313d32b4033b8c4b87a3ca7aba75a67, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,44 +1,58 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health Settings")]
     [SerializeField]
-    float maxHealth;
+    private float maxHealth = 100f;
     [SerializeField]
-    float zombieDamage;
+    private float zombieDamage = 10f;
     [SerializeField]
-    float zombieAttackCooldown;
+    private float zombieAttackCooldown = 1f;
     [SerializeField]
-    int zombieLayer;
+    private LayerMask zombieLayer;
 
-    
     private float currentHealth;
     private float timer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    private void Start()
     {
         currentHealth = maxHealth;
         timer = 0f;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        // Timer reset each frame in case we're not in contact with a zombie
+        timer += Time.deltaTime;
     }
+
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.layer == zombieLayer)
+        // Check if 'other' belongs to the zombieLayer
+        if (((1 << other.gameObject.layer) & zombieLayer) != 0)
         {
-            timer += Time.deltaTime;
             if (timer >= zombieAttackCooldown)
             {
                 currentHealth -= zombieDamage;
+                currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
                 timer = 0f;
-                Debug.Log("you have " + currentHealth + " left");
+                Debug.Log("You have " + currentHealth + " health left");
+
+                if (currentHealth <= 0f)
+                {
+                    Die();
+                }
             }
         }
+    }
+
+    private void Die()
+    {
+        Debug.Log("Player died.");
+        // Optionally disable movement, play animation, etc.
+        GetComponent<PlayerMovementCC>().enabled = false;
+        GetComponent<CharacterController>().enabled = false;
+        // You can also trigger a respawn or game over screen here.
     }
 }
