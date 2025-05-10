@@ -11,7 +11,10 @@ public class Shoot : MonoBehaviour
     public float range = 5f;
 
     //a layermask so you can only pickup items and not walls or zombies
-    public LayerMask layerMask;
+    public LayerMask itemLayerMask;
+
+    //a layermask to know when you are lookin at a doorframe that can be barricaded
+    public LayerMask doorFrameLayerMask;
 
     //the first person camera needed to center the ray
     public Camera gunCamera;
@@ -25,14 +28,22 @@ public class Shoot : MonoBehaviour
     }
 
     // shoot and if hit give the name in the console log, add it to your list and destroy the game object after that
+
+    //it also makes you put planks on doorframes if you point at doorframes
     private void Shooting() 
     {
-        RaycastHit hit;
-        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out hit, range, layerMask)) 
+        RaycastHit pickup;
+        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out pickup, range, itemLayerMask)) 
         {
-            Debug.Log(hit.transform.name);
-            items.Add(hit.transform.gameObject);
-            hit.collider.gameObject.SetActive(false);
+            Debug.Log(pickup.transform.name);
+            items.Add(pickup.transform.gameObject);
+            pickup.collider.gameObject.SetActive(false);
+        }
+
+        RaycastHit barricade;
+        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out barricade, range, itemLayerMask))
+        {
+            barricade.collider.gameObject.GetComponent<DoorBarricade>().hp += barricade.collider.gameObject.GetComponent<DoorBarricade>().maxHp / 3;
         }
     }
 }

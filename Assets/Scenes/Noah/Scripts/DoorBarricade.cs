@@ -12,12 +12,17 @@ public class DoorBarricade : MonoBehaviour
 
     void Start()
     {
-        maxHp = hp;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (hp > maxHp)
+        {
+            hp = maxHp;
+        }
+
         if (hp == maxHp)
         {
             planks[0].SetActive(true);
