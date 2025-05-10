@@ -1,43 +1,61 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health Settings")]
-    [SerializeField]
-    private float maxHealth = 100f;
-    [SerializeField]
-    private float zombieDamage = 10f;
-    [SerializeField]
-    private float zombieAttackCooldown = 1f;
-    [SerializeField]
-    private LayerMask zombieLayer;
+    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private float zombieDamage = 10f;
+    [SerializeField] private float zombieAttackCooldown = 1f;
+    [SerializeField] private LayerMask zombieLayer;
+
+    [Header("Post Processing")]
+    [SerializeField] private Volume postProcessVolume;
+    private Vignette vignette;
+
+    [Header("UI Overlay on Death")]
+    [SerializeField] private Image redScreenOverlay;
 
     private float currentHealth;
     private float timer;
+    private bool isDead = false;
 
     private void Start()
     {
         currentHealth = maxHealth;
         timer = 0f;
+
+        if (postProcessVolume != null && postProcessVolume.profile.TryGet(out Vignette v))
+        {
+            vignette = v;
+        }
+        else
+        {
+            Debug.LogWarning("Vignette not found in post processing profile.");
+        }
+
+        UpdateVisuals();
     }
 
     private void Update()
     {
-        // Timer reset each frame in case we're not in contact with a zombie
         timer += Time.deltaTime;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        // Check if 'other' belongs to the zombieLayer
-        if (((1 << other.gameObject.layer) & zombieLayer) != 0)
+        if (((1 << other.gameObject.layer) & zombieLayer) != 0 && !isDead)
         {
             if (timer >= zombieAttackCooldown)
             {
                 currentHealth -= zombieDamage;
                 currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
                 timer = 0f;
-                Debug.Log("You have " + currentHealth + " health left");
+
+                Debug.Log("Health: " + currentHealth);
+                UpdateVisuals();
 
                 if (currentHealth <= 0f)
                 {
@@ -47,12 +65,45 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private void UpdateVisuals()
+    {
+        if (vignette == null) return;
+
+        float healthPercent = currentHealth / maxHealth;
+
+        // Vignette gets more red as health decreases
+        vignette.intensity.value = Mathf.Lerp(0.4f, 1f, 1f - healthPercent);
+        vignette.color.value = Color.red;
+
+        // Red overlay alpha = 0 during life
+        if (redScreenOverlay != null)
+        {
+            var color = redScreenOverlay.color;
+            color.a = 0f;
+            redScreenOverlay.color = color;
+        }
+    }
+
     private void Die()
     {
+        isDead = true;
         Debug.Log("Player died.");
-        // Optionally disable movement, play animation, etc.
+
+        // Disable Vignette
+        if (vignette != null)
+        {
+            vignette.intensity.value = 0f;
+        }
+
+        // Show full red screen overlay
+        if (redScreenOverlay != null)
+        {
+            var color = redScreenOverlay.color;
+            color.a = 0.5f; // Fully red
+            redScreenOverlay.color = color;
+        }
+
         GetComponent<PlayerMovementCC>().enabled = false;
         GetComponent<CharacterController>().enabled = false;
-        // You can also trigger a respawn or game over screen here.
     }
 }
