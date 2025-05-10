@@ -6,7 +6,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     //make the list that holds items
-    public List<GameObject> items = new List<GameObject>();
+    public List<string> items = new List<string>();
 
     //range of pickup
     public float range = 5f;
@@ -37,7 +37,7 @@ public class Shoot : MonoBehaviour
         if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out pickup, range, itemLayerMask)) 
         {
             Debug.Log(pickup.transform.name);
-            items.Add(pickup.transform.gameObject);
+            items.Add(pickup.transform.gameObject.name);
             pickup.collider.gameObject.SetActive(false);
         }
 
