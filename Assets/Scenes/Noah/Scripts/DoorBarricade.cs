@@ -26,22 +26,28 @@ public class DoorBarricade : MonoBehaviour
         if (hp == maxHp)
         {
             planks[0].SetActive(true);
+            planks[1].SetActive(true);
+            planks[2].SetActive(true);
         }
 
-        if (hp < maxHp/1.5)
+        if (hp < maxHp*0.667)
         {
             planks[0].SetActive(false);
             planks[1].SetActive(true);
+            planks[2].SetActive(true);
         }
 
-        if (hp < maxHp/2)
+        if (hp < maxHp*0.334)
         {
+            planks[0].SetActive(false);
             planks[1].SetActive(false);
             planks[2].SetActive(true);
         }
 
-        if (hp < maxHp/4)
+        if (hp <= maxHp*0)
         {
+            planks[0].SetActive(false);
+            planks[1].SetActive(false);
             planks[2].SetActive(false);
         }
 
