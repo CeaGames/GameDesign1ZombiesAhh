@@ -33,8 +33,7 @@ public class TimerEndsWinScript : MonoBehaviour
 
         Instantiate(
             objectToSpawn,
-            new Vector3(spawnPosition.position.x, lvlGenScript.locationHeight + objectToSpawn.transform.localScale.y / 2, spawnPosition.position.z),
-            Quaternion.identity
-        );
+            new Vector3(spawnPosition.position.x, lvlGenScript.locationHeight + objectToSpawn.transform.localScale.y / 2,
+            spawnPosition.position.z), Quaternion.identity);
     }
 }

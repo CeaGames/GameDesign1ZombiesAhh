@@ -9756,12 +9756,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1826323875}
     - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: lvlGenScript
+      value: 
+      objectReference: {fileID: 608142216}
+    - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 358104684}
+    - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: _zombieLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: layerToIgnore.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 5822172686383412158, guid: 580407728a43be04ba44463a752f69b7, type: 3}
       propertyPath: m_Name
       value: WeepingAngel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8158330860125214023, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: m_Speed
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28937,71 +28953,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1201042305672583782, guid: 06dc417dd86bf3d4085e8314ffdadb11, type: 3}
   m_PrefabInstance: {fileID: 473289924}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &2052756743
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1201042305672583782, guid: 580407728a43be04ba44463a752f69b7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13.355662
-      objectReference: {fileID: 0}
-    - target: {fileID: 1201042305672583782, guid: 580407728a43be04ba44463a752f69b7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5200043
-      objectReference: {fileID: 0}
-    - target: {fileID: 1201042305672583782, guid: 580407728a43be04ba44463a752f69b7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 14.366
-      objectReference: {fileID: 0}
-    - target: {fileID: 1201042305672583782, guid: 580407728a43be04ba44463a752f69b7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1201042305672583782, guid: 580407728a43be04ba44463a752f69b7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1201042305672583782, guid: 580407728a43be04ba44463a752f69b7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1201042305672583782, guid: 580407728a43be04ba44463a752f69b7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1201042305672583782, guid: 580407728a43be04ba44463a752f69b7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1201042305672583782, guid: 580407728a43be04ba44463a752f69b7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1201042305672583782, guid: 580407728a43be04ba44463a752f69b7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1826323875}
-    - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
-      propertyPath: playerCamera
-      value: 
-      objectReference: {fileID: 358104684}
-    - target: {fileID: 5822172686383412158, guid: 580407728a43be04ba44463a752f69b7, type: 3}
-      propertyPath: m_Name
-      value: WeepingAngel (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 580407728a43be04ba44463a752f69b7, type: 3}
 --- !u!4 &2054579807 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1201042305672583782, guid: 06dc417dd86bf3d4085e8314ffdadb11, type: 3}
@@ -30443,4 +30394,3 @@ SceneRoots:
   - {fileID: 979848312}
   - {fileID: 1453486562}
   - {fileID: 687707177}
-  - {fileID: 2052756743}

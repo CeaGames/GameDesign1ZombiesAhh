@@ -4,32 +4,45 @@ using UnityEngine.AI;
 public class WeepingAngelZombie : MonoBehaviour
 {
     public Transform playerCamera;            // Assign the player's camera
-    public Transform target;                  // The destination the zombie walks toward (e.g., player or a location)
-    public float viewAngle = 70f;             // Field of view angle in degrees
-    public float detectionDistance = 30f;     // Max distance the zombie can be seen from
+    public Transform target;                  // The destination the zombie walks toward
+    public lvlGenCopy lvlGenScript;           // Spawning info
+    public float viewAngle = 70f;             // Field of view angle
+    public float detectionDistance = 30f;     // Max detection distance
 
+    //public LayerMask layerToIgnore;
+
+    public float maxHealth = 100f;            // Total health
+    public float damagePerSecond = 10f;       // Damage per second when being looked at
+
+    private float currentHealth;
     private NavMeshAgent agent;
-    private bool isSeen = false;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        currentHealth = maxHealth;
 
+        agent = GetComponent<NavMeshAgent>();
         agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
         agent.avoidancePriority = 99;
-    }
 
+        agent.Warp(new Vector3(0, lvlGenScript.locationHeight + transform.localScale.y / 2, 0));
+    }
 
     void Update()
     {
         if (IsVisibleToPlayer())
         {
-            // Stop if seen
             agent.isStopped = true;
+
+            // Take damage while being looked at
+            currentHealth -= damagePerSecond * Time.deltaTime;
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
         else
         {
-            // Move if not seen
             agent.isStopped = false;
             if (target != null)
             {
@@ -58,11 +71,24 @@ public class WeepingAngelZombie : MonoBehaviour
             {
                 if (hit.transform == transform)
                 {
-                    return true; // Zombie is in view and visible
+                    return true;
                 }
             }
         }
 
         return false;
+    }
+
+    void Die()
+    {
+        currentHealth = maxHealth;
+
+        float randomX = Random.Range(-2.5f, 2.5f);
+        float randomZ = Random.Range(-2.5f, 2.5f);
+        float y = lvlGenScript.locationHeight + transform.localScale.y / 2;
+
+        Vector3 randomPosition = new Vector3(randomX, y, randomZ);
+
+        agent.Warp(randomPosition);
     }
 }
