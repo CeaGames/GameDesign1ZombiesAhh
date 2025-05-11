@@ -24,6 +24,8 @@ public class Shoot : MonoBehaviour
     // UI displaying the amount of planks
     public Text _numberOfPlanksText;
 
+    [SerializeField] int itemHoldingLimit = 3;
+
     private void Start()
     {
         UpdatePlankUI();
@@ -43,7 +45,7 @@ public class Shoot : MonoBehaviour
     private void Shooting() 
     {
         RaycastHit pickup;
-        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out pickup, range, itemLayerMask)) 
+        if ((Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out pickup, range, itemLayerMask)) && (items.Count < itemHoldingLimit))
         {
             Debug.Log(pickup.transform.name);
             items.Add(pickup.transform.gameObject.name);
