@@ -66,7 +66,7 @@ public class Shoot : MonoBehaviour
     }
     private void UpdatePlankUI()
     {
-        _numberOfPlanksText.text = "Planks:\n" + items.Count + itemHoldingLimit;
+        _numberOfPlanksText.text = "Planks:\n" + items.Count + " / " +itemHoldingLimit;
     }
 
 }
