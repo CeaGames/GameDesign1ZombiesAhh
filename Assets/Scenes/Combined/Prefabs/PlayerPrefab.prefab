@@ -420,6 +420,7 @@ RectTransform:
   - {fileID: 3259200823850563090}
   - {fileID: 4298870161722433103}
   - {fileID: 6029140125739073728}
+  - {fileID: 4714766896393578875}
   - {fileID: 4706850888712141199}
   m_Father: {fileID: 3316848153918811808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -503,7 +504,7 @@ GameObject:
   - component: {fileID: 2593072381962687137}
   - component: {fileID: 7358602222109980538}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: RestartText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -777,6 +778,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   gunCamera: {fileID: 5570952966038507928}
+  _numberOfPlanksText: {fileID: 3714136839185948797}
 --- !u!1 &6402502952081425433
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,6 +813,87 @@ Transform:
   - {fileID: 3314944454462184404}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6528407763905766066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4714766896393578875}
+  - component: {fileID: 4378290275788373527}
+  - component: {fileID: 3714136839185948797}
+  m_Layer: 5
+  m_Name: PlanksAmount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4714766896393578875
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6528407763905766066}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4.1502156, y: 4.1502156, z: 4.1502156}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7393350373136453775}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 785, y: -52}
+  m_SizeDelta: {x: 592.367, y: 82.656}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4378290275788373527
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6528407763905766066}
+  m_CullTransparentMesh: 1
+--- !u!114 &3714136839185948797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6528407763905766066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Planks:
+
+    19'
 --- !u!1 &6625679177118646181
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,7 +906,7 @@ GameObject:
   - component: {fileID: 6279339562178070937}
   - component: {fileID: 4241094316521243557}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: YouDiedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

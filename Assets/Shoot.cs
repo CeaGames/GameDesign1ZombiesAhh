@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shoot : MonoBehaviour
 {
@@ -19,7 +20,15 @@ public class Shoot : MonoBehaviour
 
     //the first person camera needed to center the ray
     public Camera gunCamera;
-    // Update is called once per frame
+
+    // UI displaying the amount of planks
+    public Text _numberOfPlanksText;
+
+    private void Start()
+    {
+        UpdatePlankUI();
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -39,6 +48,7 @@ public class Shoot : MonoBehaviour
             Debug.Log(pickup.transform.name);
             items.Add(pickup.transform.gameObject.name);
             pickup.collider.gameObject.SetActive(false);
+            UpdatePlankUI();
         }
 
         RaycastHit barricade;
@@ -48,7 +58,13 @@ public class Shoot : MonoBehaviour
             {
                 items.Remove(items[0]);
                 barricade.collider.gameObject.GetComponent<DoorBarricade>().hp += barricade.collider.gameObject.GetComponent<DoorBarricade>().maxHp / 3;
+                UpdatePlankUI();
             }
         }
     }
+    private void UpdatePlankUI()
+    {
+        _numberOfPlanksText.text = "Planks:\n" + items.Count;
+    }
+
 }
