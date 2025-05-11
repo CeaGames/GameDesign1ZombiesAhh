@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 787252015346227238}
   - component: {fileID: 727277683931420006}
   - component: {fileID: 3014902013745259761}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ProgressDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,5 +298,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f9c2ec1b6957942a44ddea1a3f5c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdownSystem: {fileID: 0}
+  TimeToOpen: 40
   Display: {fileID: 7373144268849905484}

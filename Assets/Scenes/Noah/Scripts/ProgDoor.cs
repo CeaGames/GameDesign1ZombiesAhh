@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ProgDoor : MonoBehaviour
 {
-    public GameObject countdownSystem;
+    public int TimeToOpen;
     public TextMeshPro Display;
 
     float timer;
@@ -13,7 +13,7 @@ public class ProgDoor : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timer = countdownSystem.GetComponent<TimerEndsWinScript>().delay/3;
+        timer = TimeToOpen;
     }
 
     // Update is called once per frame
