@@ -10,7 +10,7 @@ public class Shoot : MonoBehaviour
     public List<string> items = new List<string>();
 
     //range of pickup
-    public float range = 5f;
+    public float range;
 
     //a layermask so you can only pickup items and not walls or zombies
     public LayerMask itemLayerMask;
@@ -66,7 +66,7 @@ public class Shoot : MonoBehaviour
     }
     private void UpdatePlankUI()
     {
-        _numberOfPlanksText.text = "Planks:\n" + items.Count;
+        _numberOfPlanksText.text = "Planks:\n" + items.Count + itemHoldingLimit;
     }
 
 }
