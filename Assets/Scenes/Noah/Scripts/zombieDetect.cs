@@ -10,6 +10,7 @@ public class zombieDetect : MonoBehaviour
     public float dpsFromZombies;
 
     private bool barricadeIsDestroyed = false;
+    public int zombieCount;
 
     // Struct to hold zombie data
     private struct FrozenZombieData
@@ -49,9 +50,23 @@ public class zombieDetect : MonoBehaviour
 
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (barricadeIsDestroyed)
+        {
+            if (other.gameObject.layer == 9) // zombie
+                zombieCount--;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (barricadeIsDestroyed) return;
+        if (barricadeIsDestroyed)
+        {
+            if (other.gameObject.layer == 9) // zombie
+            zombieCount++;
+            return;
+        }
 
         if (other.gameObject.layer == 9) // zombie
         {
