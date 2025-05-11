@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HelicopterWinScript : MonoBehaviour
 {
@@ -10,9 +11,19 @@ public class HelicopterWinScript : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (_canvas.enabled == true)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("itworks");
         _canvas.enabled = true;
     }
 }

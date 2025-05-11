@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -47,6 +48,11 @@ public class PlayerHealth : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;
+
+        if (isDead == true && Input.GetMouseButtonDown(0)) 
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -77,7 +83,7 @@ public class PlayerHealth : MonoBehaviour
         float healthPercent = currentHealth / maxHealth;
 
         // Vignette gets more red as health decreases
-        vignette.intensity.value = Mathf.Lerp(0.4f, 1f, 1f - healthPercent);
+        vignette.intensity.value = Mathf.Lerp(0.4f, 0.7f, 1f - healthPercent);
         vignette.color.value = Color.red;
 
         // Red overlay alpha = 0 during life
