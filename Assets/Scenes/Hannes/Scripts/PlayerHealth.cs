@@ -121,5 +121,6 @@ public class PlayerHealth : MonoBehaviour
 
         GetComponent<PlayerMovementCC>().enabled = false;
         GetComponent<CharacterController>().enabled = false;
+        transform.parent.GetComponentInChildren<PlayerLookCopy>().enabled = false;
     }
 }

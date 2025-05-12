@@ -9,7 +9,7 @@ public class PlayerMovementCC : MonoBehaviour
 
     [Header("Gravity")]
     public float gravity = -9.81f;
-    public float groundCheckDistance = 0.4f;
+    public float groundCheckDistance = 0.1f;
     public LayerMask groundMask;
 
     private float horizontalInput;

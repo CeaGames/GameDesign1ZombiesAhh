@@ -6,11 +6,11 @@ public class zombieDetect : MonoBehaviour
 {
     public DoorBarricade doorBarricade;
     public GameObject doorframe;
+    public int zombieCount;
 
     public float dpsFromZombies;
 
     private bool barricadeIsDestroyed = false;
-    public int zombieCount;
 
     // Struct to hold zombie data
     private struct FrozenZombieData
