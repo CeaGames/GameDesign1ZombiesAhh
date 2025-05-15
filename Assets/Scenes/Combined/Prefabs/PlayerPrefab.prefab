@@ -777,8 +777,12 @@ MonoBehaviour:
   doorFrameLayerMask:
     serializedVersion: 2
     m_Bits: 1024
+  zombieLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
   gunCamera: {fileID: 5570952966038507928}
   _numberOfPlanksText: {fileID: 3714136839185948797}
+  itemHoldingLimit: 3
 --- !u!1 &6402502952081425433
 GameObject:
   m_ObjectHideFlags: 0

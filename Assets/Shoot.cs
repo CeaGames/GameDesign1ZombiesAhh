@@ -18,6 +18,9 @@ public class Shoot : MonoBehaviour
     //a layermask to know when you are lookin at a doorframe that can be barricaded
     public LayerMask doorFrameLayerMask;
 
+    //a layermask for bonking the naughty zombies
+    public LayerMask zombieLayerMask;
+
     //the first person camera needed to center the ray
     public Camera gunCamera;
 
@@ -42,7 +45,7 @@ public class Shoot : MonoBehaviour
     // shoot and if hit give the name in the console log, add it to your list and destroy the game object after that
 
     //it also makes you put planks on doorframes if you point at doorframes
-    private void Shooting() 
+    private void Shooting()
     {
         RaycastHit pickup;
         if ((Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out pickup, range, itemLayerMask)) && (items.Count < itemHoldingLimit))
@@ -56,10 +59,21 @@ public class Shoot : MonoBehaviour
         RaycastHit barricade;
         if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out barricade, range, doorFrameLayerMask))
         {
-            if(barricade.transform != null && items.Count > 0 && barricade.transform.GetComponentInChildren<zombieDetect>().zombieCount == 0)
+            if (barricade.transform != null && items.Count > 0 && barricade.transform.GetComponentInChildren<zombieDetect>().zombieCount == 0)
             {
                 items.Remove(items[0]);
                 barricade.collider.gameObject.GetComponent<DoorBarricade>().hp += barricade.collider.gameObject.GetComponent<DoorBarricade>().maxHp / 3;
+                UpdatePlankUI();
+            }
+        }
+
+        RaycastHit bonk;
+        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out bonk, range, zombieLayerMask))
+        {
+            if (bonk.transform != null && items.Count > 0)
+            {
+                items.Remove(items[0]);
+                bonk.collider.gameObject.SetActive(false);
                 UpdatePlankUI();
             }
         }
