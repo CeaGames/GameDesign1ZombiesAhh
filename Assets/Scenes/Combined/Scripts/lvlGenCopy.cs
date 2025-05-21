@@ -12,7 +12,7 @@ public class lvlGenCopy : MonoBehaviour
     public int floorAmount;
 
 
-    private int levelAmount = 3; //put in the amount of designed levels appart from ground level
+    private int levelAmount = 4; //put in the amount of designed levels appart from ground level
     public float locationHeight = 0f; //don't change unless you want to recreate UP
 
 
