@@ -413,7 +413,8 @@ MonoBehaviour:
   levels:
   - {fileID: 919132149155446097, guid: 1470dc3d655a72444a746d95d838677e, type: 3}
   - {fileID: 919132149155446097, guid: 561ce27bd56708e4bacea5c78f9fb630, type: 3}
-  - {fileID: 919132149155446097, guid: 8dd1d2d1a86d6ed418d0aa5d997dadfd, type: 3}
+  - {fileID: 6567494482161376382, guid: 3712a5e822e086646ba3ff2fea42d73f, type: 3}
+  - {fileID: 1308716783119595028, guid: 9d58a4e36bfdc0f4f88d7668a10802cd, type: 3}
   roof: {fileID: 919132149155446097, guid: be9a01ee86c8dae4685d9b954d4a0c75, type: 3}
   floorAmount: 10
 --- !u!1 &1493948503

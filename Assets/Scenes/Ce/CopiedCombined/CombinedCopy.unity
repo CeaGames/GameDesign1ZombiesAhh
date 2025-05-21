@@ -8554,9 +8554,10 @@ MonoBehaviour:
   levels:
   - {fileID: 919132149155446097, guid: 989e4f9caebfa1547a8c99aab0ccdd6e, type: 3}
   - {fileID: 919132149155446097, guid: 2992971f52f5c1141ab811a311622fd8, type: 3}
-  - {fileID: 919132149155446097, guid: 4975efbad0d7dd445bf9512e20a319c1, type: 3}
+  - {fileID: 6567494482161376382, guid: 3712a5e822e086646ba3ff2fea42d73f, type: 3}
+  - {fileID: 244011761069220903, guid: 6c99aabe1319ce64fafbf496d7748bba, type: 3}
   roof: {fileID: 919132149155446097, guid: 32e8f26455598d5428603f03151a8a4b, type: 3}
-  floorAmount: 2
+  floorAmount: 5
   locationHeight: 0
 --- !u!1 &612106289
 GameObject:
