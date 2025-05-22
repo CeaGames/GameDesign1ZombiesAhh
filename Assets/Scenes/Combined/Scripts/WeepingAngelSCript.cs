@@ -33,13 +33,6 @@ public class WeepingAngelZombie : MonoBehaviour
         if (IsVisibleToPlayer())
         {
             agent.isStopped = true;
-
-            // Take damage while being looked at
-            currentHealth -= damagePerSecond * Time.deltaTime;
-            if (currentHealth <= 0)
-            {
-                Die();
-            }
         }
         else
         {
@@ -79,10 +72,8 @@ public class WeepingAngelZombie : MonoBehaviour
         return false;
     }
 
-    void Die()
+    public void Die()
     {
-        currentHealth = maxHealth;
-
         float randomX = Random.Range(-2.5f, 2.5f);
         float randomZ = Random.Range(-2.5f, 2.5f);
         float y = lvlGenScript.locationHeight + transform.localScale.y / 2;

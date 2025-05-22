@@ -13,44 +13,27 @@ public class CeAiBehaviourScriptCopy : MonoBehaviour
     private Transform _nearestDoor = null;
     float _shortestDoorDistance = float.MaxValue;
 
+    private float timer = 10;
+
     void Start()
     {
-        /*GameObject[] doorObjects = GameObject.FindGameObjectsWithTag("Door");
 
-        Debug.Log(doorObjects.Length);
-        foreach (GameObject doorObj in doorObjects)
-        {
-            _doors.Add(doorObj.transform);
-            _totalDoors.Add(doorObj.transform);
-        }*/
     }
 
     void Update()
     {
+        timer -= Time.deltaTime;
 
-        // Clean up if door was destroyed
-        /*if (_nearestDoor == null || !_nearestDoor.gameObject.activeSelf)
+        if(timer < 0)
         {
-            _nearestDoor = null;
-            _shortestDoorDistance = float.MaxValue;
-        }*/
-
-        // Try pathing to player
-        if (IsPathReachable(_playerT.position))
-        {
-            _zobmieAgent.SetDestination(_playerT.position);
-        }
-        /*else
-        {
-            // Find nearest door
-            GetNearestDoor();
-
-            if (_nearestDoor != null)
+            if (IsPathReachable(_playerT.position))
             {
-                _zobmieAgent.SetDestination(_nearestDoor.position);
+                _zobmieAgent.SetDestination(_playerT.position);
             }
-        }*/
+        }
     }
+
+
 
     bool IsPathReachable(Vector3 targetPosition)
     {
