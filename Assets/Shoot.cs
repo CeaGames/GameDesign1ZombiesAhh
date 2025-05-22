@@ -36,13 +36,38 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire2"))
         {
             Shooting();
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Bonking();
         }
     }
 
     // shoot and if hit give the name in the console log, add it to your list and destroy the game object after that
+    private void Bonking()
+    {
+        RaycastHit bonk;
+        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out bonk, range, zombieLayerMask))
+        {
+            if (bonk.transform != null && items.Count > 0)
+            {
+                items.Remove(items[0]);
+                UpdatePlankUI();
+
+                if (bonk.transform.gameObject.GetComponent<WeepingAngelZombie>() != null)
+                {
+                    bonk.transform.gameObject.GetComponent<WeepingAngelZombie>().Die();
+                }
+                else
+                {
+                    bonk.collider.gameObject.SetActive(false);
+                }
+            }
+        }
+    }
 
     //it also makes you put planks on doorframes if you point at doorframes
     private void Shooting()
@@ -64,25 +89,6 @@ public class Shoot : MonoBehaviour
                 items.Remove(items[0]);
                 barricade.collider.gameObject.GetComponent<DoorBarricade>().hp += barricade.collider.gameObject.GetComponent<DoorBarricade>().maxHp / 3;
                 UpdatePlankUI();
-            }
-        }
-
-        RaycastHit bonk;
-        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out bonk, range, zombieLayerMask))
-        {
-            if (bonk.transform != null && items.Count > 0)
-            {
-                items.Remove(items[0]);
-                UpdatePlankUI();
-
-                if(bonk.transform.gameObject.GetComponent<WeepingAngelZombie>() != null)
-                {
-                    bonk.transform.gameObject.GetComponent<WeepingAngelZombie>().Die();
-                }
-                else
-                {
-                    bonk.collider.gameObject.SetActive(false);
-                }
             }
         }
     }
