@@ -7,6 +7,8 @@ public class PlayerMovementCC : MonoBehaviour
     public float moveSpeed = 5f;
     public Transform orientation;
 
+    public PlayerHealth healthscript;
+
     [Header("Gravity")]
     public float gravity = -9.81f;
     public float groundCheckDistance = 0.1f;
@@ -31,6 +33,7 @@ public class PlayerMovementCC : MonoBehaviour
     {
         GroundCheck();
         MyInput();
+        moveSpeed = healthscript.currentHealth * 0.03f + 2f;
         MovePlayer();
         ApplyGravity();
     }
@@ -43,6 +46,7 @@ public class PlayerMovementCC : MonoBehaviour
 
     private void MovePlayer()
     {
+        
         // Movement relative to orientation
         movementDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
         movementDirection.Normalize();

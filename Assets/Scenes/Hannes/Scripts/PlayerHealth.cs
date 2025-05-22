@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Image redScreenOverlay;
     [SerializeField] private GameObject youAreDeadText;
 
-    private float currentHealth;
+    public float currentHealth;
     private float timer;
     private bool isDead = false;
 
