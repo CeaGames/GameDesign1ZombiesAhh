@@ -73,8 +73,16 @@ public class Shoot : MonoBehaviour
             if (bonk.transform != null && items.Count > 0)
             {
                 items.Remove(items[0]);
-                bonk.collider.gameObject.SetActive(false);
                 UpdatePlankUI();
+
+                if(bonk.transform.gameObject.GetComponent<WeepingAngelZombie>() != null)
+                {
+                    bonk.transform.gameObject.GetComponent<WeepingAngelZombie>().Die();
+                }
+                else
+                {
+                    bonk.collider.gameObject.SetActive(false);
+                }
             }
         }
     }
