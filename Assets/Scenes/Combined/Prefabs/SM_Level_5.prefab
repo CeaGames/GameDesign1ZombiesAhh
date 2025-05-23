@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 23d76d1de54645f478545cc07ef4e01b, type: 3}
       propertyPath: m_Name
-      value: SM_Level_5 1
+      value: SM_Level_5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -232,7 +232,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -3673086777786009193, guid: 23d76d1de54645f478545cc07ef4e01b, type: 3}
+  m_Mesh: {fileID: 6453199300835340542, guid: 23d76d1de54645f478545cc07ef4e01b, type: 3}
 --- !u!4 &1783666461690840799 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 23d76d1de54645f478545cc07ef4e01b, type: 3}
