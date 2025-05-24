@@ -22,6 +22,8 @@ public class Shoot : MonoBehaviour
     //a layermask for bonking the naughty zombies
     public LayerMask zombieLayerMask;
 
+    public LayerMask drawerLayerMask;
+
     //the first person camera needed to center the ray
     public Camera gunCamera;
 
@@ -54,6 +56,10 @@ public class Shoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Bonking();
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Opening();
         }
     }
 
@@ -92,7 +98,24 @@ public class Shoot : MonoBehaviour
             _actionText.text = "";
         }
 
-        
+
+    }
+
+    private void Opening()
+    {
+        RaycastHit open;
+        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out open, range, drawerLayerMask))
+        {
+            Debug.Log("opening");
+            // Try to get the Drawer component from the 'open' object
+            Drawer drawer = open.collider.GetComponent<Drawer>();
+
+            if (drawer != null)
+            {
+                // Toggle the drawerOpen field
+                drawer.drawerOpen = !drawer.drawerOpen;
+            }
+        }
     }
 
     // shoot and if hit give the name in the console log, add it to your list and destroy the game object after that
