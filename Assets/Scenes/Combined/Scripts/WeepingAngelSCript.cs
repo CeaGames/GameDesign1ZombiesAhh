@@ -14,11 +14,17 @@ public class WeepingAngelZombie : MonoBehaviour
     public float maxHealth = 100f;            // Total health
     public float damagePerSecond = 10f;       // Damage per second when being looked at
 
+    [SerializeField] private Material yellowMaterial;
+    [SerializeField] private Material greyMaterial;
+
     private float currentHealth;
     private NavMeshAgent agent;
+    private MeshRenderer meshRenderer;
 
     void Start()
     {
+        meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer.material = yellowMaterial;
         currentHealth = maxHealth;
 
         agent = GetComponent<NavMeshAgent>();
@@ -33,9 +39,13 @@ public class WeepingAngelZombie : MonoBehaviour
         if (IsVisibleToPlayer())
         {
             agent.isStopped = true;
+            Debug.Log("grey");
+            meshRenderer.material = greyMaterial;
         }
         else
         {
+            meshRenderer.material = yellowMaterial;
+            Debug.Log("yellow");
             agent.isStopped = false;
             if (target != null)
             {

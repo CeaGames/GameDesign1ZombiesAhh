@@ -3680,6 +3680,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 384980874080360310, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 384980874080360310, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 384980874080360310, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1673b1bbeec0cb7458bf5ad019d993ed, type: 2}
     - target: {fileID: 1201042305672583782, guid: 580407728a43be04ba44463a752f69b7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.1483622
@@ -3725,6 +3737,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1826323875}
     - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: greyMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 1673b1bbeec0cb7458bf5ad019d993ed, type: 2}
+    - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
       propertyPath: lvlGenScript
       value: 
       objectReference: {fileID: 608142216}
@@ -3732,6 +3748,10 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1236223132}
+    - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: yellowMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: ce8de733e34b74946a1bbba2be961cdf, type: 2}
     - target: {fileID: 5822172686383412158, guid: 580407728a43be04ba44463a752f69b7, type: 3}
       propertyPath: m_Name
       value: WeepingAngel
@@ -14819,7 +14839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1837484712
 BoxCollider:
   m_ObjectHideFlags: 0
