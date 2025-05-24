@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class PlankHolding : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject plank;
+    public Shoot yeahThatOne;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -21,6 +22,16 @@ public class PlankHolding : MonoBehaviour
         {
             transform.Rotate(0, 0, -45);
         }
+
+        if (yeahThatOne.items.Count == 0)
+        {
+            plank.SetActive(false);
+        }
+        else
+        {
+            plank.SetActive(true);
+        }
+
 
         
     }
