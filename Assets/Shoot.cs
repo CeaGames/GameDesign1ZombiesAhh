@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using NUnit.Framework;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,15 +28,25 @@ public class Shoot : MonoBehaviour
     // UI displaying the amount of planks
     public Text _numberOfPlanksText;
 
+    // UI stuff (turial if you will)
+    [SerializeField] private TMP_Text _actionText;
+    [SerializeField] private Image _leftClickImage;
+    [SerializeField] private Image _rightClickImage;
+
     [SerializeField] int itemHoldingLimit = 3;
 
     private void Start()
     {
         UpdatePlankUI();
+        _leftClickImage.gameObject.SetActive(false);
+        _rightClickImage.gameObject.SetActive(false);
+        _actionText.gameObject.SetActive(false);
     }
 
     void Update()
     {
+        UpdateTutorialUI();
+
         if (Input.GetButtonDown("Fire2"))
         {
             Shooting();
@@ -44,6 +55,44 @@ public class Shoot : MonoBehaviour
         {
             Bonking();
         }
+    }
+
+    private void UpdateTutorialUI()
+    {
+        //zombie kill ui
+        RaycastHit bonk;
+        RaycastHit pickup;
+        RaycastHit barricade;
+        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out bonk, range, zombieLayerMask))
+        {
+            _leftClickImage.gameObject.SetActive(true);
+            _rightClickImage.gameObject.SetActive(false);
+            _actionText.gameObject.SetActive(true);
+            _actionText.text = "Kill with plank";
+        }
+        else if ((Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out pickup, range, itemLayerMask)) && (items.Count < itemHoldingLimit))
+        {
+            _leftClickImage.gameObject.SetActive(false);
+            _rightClickImage.gameObject.SetActive(true);
+            _actionText.gameObject.SetActive(true);
+            _actionText.text = "Pick up";
+        }
+        else if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out barricade, range, doorFrameLayerMask))
+        {
+            _leftClickImage.gameObject.SetActive(false);
+            _rightClickImage.gameObject.SetActive(true);
+            _actionText.gameObject.SetActive(true);
+            _actionText.text = "Place plank";
+        }
+        else
+        {
+            _leftClickImage.gameObject.SetActive(false);
+            _rightClickImage.gameObject.SetActive(false);
+            _actionText.gameObject.SetActive(false);
+            _actionText.text = "";
+        }
+
+        
     }
 
     // shoot and if hit give the name in the console log, add it to your list and destroy the game object after that
