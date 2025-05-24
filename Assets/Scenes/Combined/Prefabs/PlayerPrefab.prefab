@@ -352,6 +352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be4d03347a999b498525c3dc9d13e45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plank: {fileID: 3756772978451851766}
+  yeahThatOne: {fileID: 3233331036373761610}
 --- !u!1 &3615854959433803344
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,7 +926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 45, y: 14}
+  m_AnchoredPosition: {x: -71.1, y: 130.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2645696674310947790
@@ -989,7 +991,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1020,7 +1022,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -283.4882, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1131,9 +1133,9 @@ MonoBehaviour:
     m_Bits: 512
   gunCamera: {fileID: 5570952966038507928}
   _numberOfPlanksText: {fileID: 3714136839185948797}
-  _actionText: {fileID: 0}
-  _leftClickImage: {fileID: 0}
-  _rightClickImage: {fileID: 0}
+  _actionText: {fileID: 1641887104680221641}
+  _leftClickImage: {fileID: 3010859749212777216}
+  _rightClickImage: {fileID: 4627563512888255818}
   itemHoldingLimit: 3
 --- !u!1 &6402502952081425433
 GameObject:
