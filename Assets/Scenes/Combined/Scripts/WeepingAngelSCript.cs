@@ -39,13 +39,11 @@ public class WeepingAngelZombie : MonoBehaviour
         if (IsVisibleToPlayer())
         {
             agent.isStopped = true;
-            Debug.Log("grey");
             meshRenderer.material = greyMaterial;
         }
         else
         {
             meshRenderer.material = yellowMaterial;
-            Debug.Log("yellow");
             agent.isStopped = false;
             if (target != null)
             {

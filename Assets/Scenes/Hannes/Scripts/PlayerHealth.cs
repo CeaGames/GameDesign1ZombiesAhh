@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     [Header("Health Settings")]
-    [SerializeField] private float maxHealth = 100f;
+    public float maxHealth = 100f;
     [SerializeField] private float zombieDamage = 10f;
     [SerializeField] private float zombieAttackCooldown = 1f;
     [SerializeField] private LayerMask zombieLayer;
@@ -65,7 +65,7 @@ public class PlayerHealth : MonoBehaviour
                 currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
                 timer = 0f;
 
-                Debug.Log("Health: " + currentHealth);
+                //Debug.Log("Health: " + currentHealth);
                 UpdateVisuals();
 
                 if (currentHealth <= 0f)
@@ -76,7 +76,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void UpdateVisuals()
+    public void UpdateVisuals()
     {
         if (vignette == null) return;
 

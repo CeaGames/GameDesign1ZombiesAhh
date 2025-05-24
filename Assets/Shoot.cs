@@ -3,6 +3,7 @@ using NUnit.Framework;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class Shoot : MonoBehaviour
@@ -15,6 +16,7 @@ public class Shoot : MonoBehaviour
 
     //a layermask so you can only pickup items and not walls or zombies
     public LayerMask itemLayerMask;
+    public LayerMask medkitLayerMask;
 
     //a layermask to know when you are lookin at a doorframe that can be barricaded
     public LayerMask doorFrameLayerMask;
@@ -29,6 +31,9 @@ public class Shoot : MonoBehaviour
 
     // UI displaying the amount of planks
     public Text _numberOfPlanksText;
+
+    //healing
+    public PlayerHealth _playerHealth;
 
     // UI stuff (turial if you will)
     [SerializeField] private TMP_Text _actionText;
@@ -69,6 +74,8 @@ public class Shoot : MonoBehaviour
         RaycastHit bonk;
         RaycastHit pickup;
         RaycastHit barricade;
+        RaycastHit open;
+        RaycastHit medkit;
         if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out bonk, range, zombieLayerMask))
         {
             _leftClickImage.gameObject.SetActive(true);
@@ -90,6 +97,20 @@ public class Shoot : MonoBehaviour
             _actionText.gameObject.SetActive(true);
             _actionText.text = "Place plank";
         }
+        else if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out open, range, drawerLayerMask))
+        {
+            _leftClickImage.gameObject.SetActive(false);
+            _rightClickImage.gameObject.SetActive(false);
+            _actionText.gameObject.SetActive(true);
+            _actionText.text = "E to open";
+        }
+        else if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out medkit, range, medkitLayerMask))
+        {
+            _leftClickImage.gameObject.SetActive(false);
+            _rightClickImage.gameObject.SetActive(false);
+            _actionText.gameObject.SetActive(true);
+            _actionText.text = "E to HEAL";
+        }
         else
         {
             _leftClickImage.gameObject.SetActive(false);
@@ -97,13 +118,12 @@ public class Shoot : MonoBehaviour
             _actionText.gameObject.SetActive(false);
             _actionText.text = "";
         }
-
-
     }
 
     private void Opening()
     {
         RaycastHit open;
+        RaycastHit medkit;
         if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out open, range, drawerLayerMask))
         {
             Debug.Log("opening");
@@ -115,6 +135,17 @@ public class Shoot : MonoBehaviour
                 // Toggle the drawerOpen field
                 drawer.drawerOpen = !drawer.drawerOpen;
             }
+        }
+        //Consume Healing
+        else if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out medkit, range, medkitLayerMask))
+        {
+            medkit.transform.gameObject.SetActive(false);
+
+            _playerHealth.currentHealth = _playerHealth.currentHealth + 30;
+            _playerHealth.currentHealth = Mathf.Clamp(_playerHealth.currentHealth, 0, _playerHealth.maxHealth);
+
+            Debug.Log(_playerHealth.currentHealth);
+            _playerHealth.UpdateVisuals();
         }
     }
 

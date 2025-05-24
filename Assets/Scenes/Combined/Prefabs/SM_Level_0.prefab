@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -5754084199372789682}
   - component: {fileID: -7511558181221131132}
   - component: {fileID: 1762518588783042461}
+  - component: {fileID: 6464376855806800941}
   m_Layer: 0
   m_Name: SM_Level_0
   m_TagString: Untagged
@@ -132,6 +133,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4830443329632533066, guid: 27d54813ac5bec046af08e619713bd42, type: 3}
+--- !u!114 &6464376855806800941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149155446097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095c2353f1806474ca339c0312a5f74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabInstance: {fileID: 919132149155446097}
 --- !u!1001 &609629543329011702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -392,6 +406,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: -8679921383154817045}
     m_Modifications:
+    - target: {fileID: 463829595686894374, guid: 6e718c5fbc8304942b2a0315d5179695, type: 3}
+      propertyPath: HasItem
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403666987597969095, guid: 6e718c5fbc8304942b2a0315d5179695, type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 1725791747732929466, guid: 6e718c5fbc8304942b2a0315d5179695, type: 3}
       propertyPath: m_Name
       value: Drawer (3)
