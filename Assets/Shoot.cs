@@ -139,7 +139,8 @@ public class Shoot : MonoBehaviour
         //Consume Healing
         else if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out medkit, range, medkitLayerMask))
         {
-            medkit.transform.gameObject.SetActive(false);
+            HasItemScript hasItemScript = medkit.transform.parent.GetComponent<HasItemScript>();
+            hasItemScript.HasItem = false;
 
             _playerHealth.currentHealth = _playerHealth.currentHealth + 30;
             _playerHealth.currentHealth = Mathf.Clamp(_playerHealth.currentHealth, 0, _playerHealth.maxHealth);
