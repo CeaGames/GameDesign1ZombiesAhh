@@ -76,7 +76,7 @@ public class Shoot : MonoBehaviour
         RaycastHit barricade;
         RaycastHit open;
         RaycastHit medkit;
-        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out bonk, range, zombieLayerMask))
+        if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out bonk, range, zombieLayerMask) && items.Count > 0)
         {
             _leftClickImage.gameObject.SetActive(true);
             _rightClickImage.gameObject.SetActive(false);
@@ -90,7 +90,7 @@ public class Shoot : MonoBehaviour
             _actionText.gameObject.SetActive(true);
             _actionText.text = "Pick up";
         }
-        else if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out barricade, range, doorFrameLayerMask))
+        else if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out barricade, range, doorFrameLayerMask) && items.Count > 0)
         {
             _leftClickImage.gameObject.SetActive(false);
             _rightClickImage.gameObject.SetActive(true);
