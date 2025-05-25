@@ -5205,6 +5205,7 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: 2992971f52f5c1141ab811a311622fd8, type: 3}
   - {fileID: 5669801543991489447, guid: 5e1369b5679646e41a758492da5512c9, type: 3}
   - {fileID: 1408232085145787493, guid: 361bf6db676bc5144b8c04b97e5a64ea, type: 3}
+  timedDoor: {fileID: 658908879977560133, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
   roof: {fileID: 1019440877598421613, guid: dbb117064f0d4be419fa1524cc2745ae, type: 3}
   floorAmount: 5
   locationHeight: 0
@@ -12129,72 +12130,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 29675523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1511973023
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 658908879977560133, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
-      propertyPath: m_Name
-      value: progressDoors
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055216269708932522, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055216269708932522, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055216269708932522, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055216269708932522, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055216269708932522, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055216269708932522, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055216269708932522, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055216269708932522, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055216269708932522, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1055216269708932522, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 183564638632336877, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 1623682572358026992, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 7994612455778486327, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-  m_SourcePrefab: {fileID: 100100000, guid: 28db177d7dea4ec429047d850239d41a, type: 3}
 --- !u!1001 &1512084118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12279,6 +12214,10 @@ PrefabInstance:
     - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: medkitLayerMask.m_Bits
       value: 65536
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181120990210404585, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
+      propertyPath: delay
+      value: 260
       objectReference: {fileID: 0}
     - target: {fileID: 6181120990210404585, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: lvlGenScript
@@ -16729,7 +16668,6 @@ SceneRoots:
   - {fileID: 979848312}
   - {fileID: 1515963987}
   - {fileID: 1453486562}
-  - {fileID: 1511973023}
   - {fileID: 275219614}
   - {fileID: 458028090}
   - {fileID: 203544600}

@@ -7,6 +7,7 @@ public class lvlGenCopy : MonoBehaviour
 
     public GameObject groundLevel;
     public GameObject[] levels;
+    [SerializeField] private GameObject timedDoor;
     //put in move levels when more designed
     public GameObject roof;
     public int floorAmount;
@@ -15,10 +16,13 @@ public class lvlGenCopy : MonoBehaviour
     private int levelAmount = 4; //put in the amount of designed levels appart from ground level
     public float locationHeight = 0f; //don't change unless you want to recreate UP
 
+    private float timeToOpenDoor;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+        timeToOpenDoor = timedDoor.GetComponent<ProgDoor>().TimeToOpen;
         GenerateLevel();
         _navMeshSurface.BuildNavMesh();
     }
@@ -26,7 +30,12 @@ public class lvlGenCopy : MonoBehaviour
     // Update is called once per frame
     void GenerateLevel()
     {
+        float timedDoorAmount = 0;
+
         Instantiate(groundLevel, new Vector3(0, 0, 0), Quaternion.identity);
+        GameObject firstTimedDoor = Instantiate(timedDoor, new Vector3(0, 0, 0), Quaternion.identity);
+        timedDoorAmount++;
+        firstTimedDoor.GetComponent<ProgDoor>().TimeToOpen = timeToOpenDoor * timedDoorAmount;
         locationHeight += 3f; //groundfloor is 300cm
 
         for (int i = 0; i < floorAmount; i++)
@@ -36,10 +45,16 @@ public class lvlGenCopy : MonoBehaviour
                 if (i % 2 == 0)
                 {
                     Instantiate(levels[level], new Vector3(0, locationHeight, 0), Quaternion.Euler(new Vector3(0, 180, 0)));
+                    GameObject timedDoorInstance = Instantiate(timedDoor, new Vector3(0, locationHeight, 0), Quaternion.Euler(new Vector3(0, 180, 0)));
+                    timedDoorAmount++;
+                    timedDoorInstance.GetComponent<ProgDoor>().TimeToOpen = timeToOpenDoor * timedDoorAmount;
                 }
                 else
                 {
                     Instantiate(levels[level], new Vector3(0, locationHeight, 0), Quaternion.identity);
+                    GameObject timedDoorInstance = Instantiate(timedDoor, new Vector3(0, locationHeight, 0), Quaternion.identity);
+                    timedDoorAmount++;
+                    timedDoorInstance.GetComponent<ProgDoor>().TimeToOpen = timeToOpenDoor * timedDoorAmount;
                 }
                 locationHeight += 2.7f; //floorheight is 270cm
             }

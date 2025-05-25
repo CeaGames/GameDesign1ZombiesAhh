@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ProgDoor : MonoBehaviour
 {
-    public int TimeToOpen;
+    public float TimeToOpen = 40;
     public TextMeshPro Display;
 
     float timer;
