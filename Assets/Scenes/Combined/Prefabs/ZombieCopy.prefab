@@ -148,5 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerT: {fileID: 0}
   _zobmieAgent: {fileID: 8158330860125214023}
-  _doors: []
-  _totalDoors: []
+  offsetUpdateInterval: 5
+  offsetRange: 5
+  directChaseDistance: 5
