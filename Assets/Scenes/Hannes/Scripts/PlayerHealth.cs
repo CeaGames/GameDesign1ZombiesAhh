@@ -114,10 +114,6 @@ public class PlayerHealth : MonoBehaviour
             redScreenOverlay.color = color;
         }
 
-        //enable cursor
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
         if (youAreDeadText != null) 
         {
             youAreDeadText.SetActive(true);
