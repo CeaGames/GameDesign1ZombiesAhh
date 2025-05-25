@@ -435,6 +435,7 @@ MonoBehaviour:
   redScreenOverlay: {fileID: 4101772760897546481}
   youAreDeadText: {fileID: 6706716609516607914}
   currentHealth: 0
+  Ow: {fileID: 0}
 --- !u!143 &5559272399558444343
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1073,7 +1074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 6401559894805606394, guid: 5eee83d0a50080145810dcce8119fe9d, type: 3}
-  delay: 250
+  delay: 260
   lvlGenScript: {fileID: 0}
   countdownText: {fileID: 3008379441983197598}
 --- !u!1 &6254099549116267751
@@ -1144,6 +1145,11 @@ MonoBehaviour:
   _leftClickImage: {fileID: 3010859749212777216}
   _rightClickImage: {fileID: 4627563512888255818}
   itemHoldingLimit: 3
+  HitZ: {fileID: 0}
+  OpenChest: {fileID: 0}
+  Backpack: {fileID: 0}
+  Barricade: {fileID: 0}
+  Pickup: {fileID: 0}
 --- !u!1 &6402502952081425433
 GameObject:
   m_ObjectHideFlags: 0

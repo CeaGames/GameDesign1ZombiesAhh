@@ -1,5 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Audio;
 
 public class WeepingAngelZombie : MonoBehaviour
 {
@@ -21,8 +22,14 @@ public class WeepingAngelZombie : MonoBehaviour
     private NavMeshAgent agent;
     private MeshRenderer meshRenderer;
 
+    [SerializeField] private AudioClip hannesScream;
+    private AudioSource audioSource;
+
     void Start()
     {
+
+        audioSource = GetComponent<AudioSource>();
+        
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material = yellowMaterial;
         currentHealth = maxHealth;
@@ -36,10 +43,14 @@ public class WeepingAngelZombie : MonoBehaviour
 
     void Update()
     {
+
         if (IsVisibleToPlayer())
         {
             agent.isStopped = true;
             meshRenderer.material = greyMaterial;
+
+            audioSource.clip = hannesScream;
+            audioSource.Play();
         }
         else
         {

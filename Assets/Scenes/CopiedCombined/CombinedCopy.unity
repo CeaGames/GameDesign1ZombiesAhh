@@ -12216,6 +12216,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 5d426b599f307da4790f4048e1d48c6a, type: 3}
     - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
+      propertyPath: Pickup
+      value: 
+      objectReference: {fileID: 8300000, guid: 70e6ebaf49a78d04ab7b9ddb5f8527b5, type: 3}
+    - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: Backpack
       value: 
       objectReference: {fileID: 8300000, guid: f9260ccf060fe1c478a7478d20e3b5e2, type: 3}

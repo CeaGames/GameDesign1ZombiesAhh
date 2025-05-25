@@ -46,6 +46,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private AudioClip OpenChest;
     [SerializeField] private AudioClip Backpack;
     [SerializeField] private AudioClip Barricade;
+    [SerializeField] private AudioClip Pickup;
     private AudioSource audioSource;
     //these add the audio clips
 
@@ -137,7 +138,9 @@ public class Shoot : MonoBehaviour
             Debug.Log("opening");
             // Try to get the Drawer component from the 'open' object
             Drawer drawer = open.collider.GetComponent<Drawer>();
-
+            audioSource.clip = OpenChest;
+            audioSource.Play();
+            Debug.Log("opening");
             if (drawer != null)
             {
                 // Toggle the drawerOpen field
@@ -191,7 +194,8 @@ public class Shoot : MonoBehaviour
         RaycastHit pickup;
         if ((Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out pickup, range, itemLayerMask)) && (items.Count < itemHoldingLimit))
         {
-
+            audioSource.clip = Pickup;
+            audioSource.Play();
             Debug.Log(pickup.transform.name);
             items.Add(pickup.transform.gameObject.name);
             pickup.collider.gameObject.SetActive(false);
