@@ -56,7 +56,7 @@ public class Shoot : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2"))
         {
-            Shooting();
+            PickingUpOrPlacingPlanks();
         }
         if (Input.GetButtonDown("Fire1"))
         {
@@ -173,7 +173,7 @@ public class Shoot : MonoBehaviour
     }
 
     //it also makes you put planks on doorframes if you point at doorframes
-    private void Shooting()
+    private void PickingUpOrPlacingPlanks()
     {
         RaycastHit pickup;
         if ((Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out pickup, range, itemLayerMask)) && (items.Count < itemHoldingLimit))
@@ -182,6 +182,7 @@ public class Shoot : MonoBehaviour
             items.Add(pickup.transform.gameObject.name);
             pickup.collider.gameObject.SetActive(false);
             UpdatePlankUI();
+            return;
         }
 
         RaycastHit barricade;
