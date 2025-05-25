@@ -13,6 +13,11 @@ public class MainManu : MonoBehaviour
     public Slider floorAmountSlider;
     public TextMeshProUGUI floorAmountSliderText;
 
+    private void Start()
+    {
+        Cursor.visible = true;
+    }
+
     void Update()
     {
         // Update UI

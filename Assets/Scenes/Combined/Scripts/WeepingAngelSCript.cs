@@ -40,6 +40,7 @@ public class WeepingAngelZombie : MonoBehaviour
         {
             agent.isStopped = true;
             meshRenderer.material = greyMaterial;
+            transform.LookAt(playerCamera);
         }
         else
         {
