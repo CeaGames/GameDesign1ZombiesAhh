@@ -14,7 +14,7 @@ public class CeAiBehaviourScriptCopy : MonoBehaviour
     private Vector3 currentOffset;
     private float offsetTimer;
 
-    private float timeBeforeStart = 5;
+    private float timeBeforeStart = 10;
 
     void Start()
     {
