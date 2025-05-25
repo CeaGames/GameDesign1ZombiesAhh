@@ -23,6 +23,7 @@ public class lvlGenCopy : MonoBehaviour
     void Awake()
     {
         timeToOpenDoor = timedDoor.GetComponent<ProgDoor>().TimeToOpen;
+        floorAmount = SettingsCarrier.levelAmount;
         GenerateLevel();
         _navMeshSurface.BuildNavMesh();
     }

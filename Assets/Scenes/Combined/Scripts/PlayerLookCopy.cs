@@ -22,6 +22,9 @@ public class PlayerLookCopy : MonoBehaviour
         Cursor.visible = false;
 
         yRotation = startRotation;
+
+        MouseSensX = SettingsCarrier.mouseSensetivity;
+        MouseSensY = SettingsCarrier.mouseSensetivity;
     }
 
     // Update is called once per frame
