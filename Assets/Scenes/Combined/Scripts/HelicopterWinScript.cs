@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class HelicopterWinScript : MonoBehaviour
 {
     [SerializeField] private Canvas _canvas;
+    [SerializeField] private AudioClip Chopper;
+    private AudioSource audioSource;
 
     private void Start()
     {

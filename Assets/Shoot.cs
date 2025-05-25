@@ -134,8 +134,6 @@ public class Shoot : MonoBehaviour
         RaycastHit medkit;
         if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out open, range, drawerLayerMask))
         {
-            audioSource.clip = OpenChest;
-            audioSource.Play();
             Debug.Log("opening");
             // Try to get the Drawer component from the 'open' object
             Drawer drawer = open.collider.GetComponent<Drawer>();
@@ -149,7 +147,9 @@ public class Shoot : MonoBehaviour
         //Consume Healing
         else if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out medkit, range, medkitLayerMask))
         {
-            medkit.transform.gameObject.SetActive(false);
+            HasItemScript hasItemScript = medkit.transform.parent.GetComponent<HasItemScript>();
+            hasItemScript.HasItem = false;
+
             audioSource.clip = Backpack;
             audioSource.Play();
             _playerHealth.currentHealth = _playerHealth.currentHealth + 30;

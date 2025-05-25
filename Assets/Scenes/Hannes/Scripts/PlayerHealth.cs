@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -24,8 +25,16 @@ public class PlayerHealth : MonoBehaviour
     private float timer;
     private bool isDead = false;
 
+    [SerializeField] private AudioClip Ow;
+    private AudioSource audioSource;
+
     private void Start()
     {
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+
         currentHealth = maxHealth;
         timer = 0f;
 
@@ -62,8 +71,14 @@ public class PlayerHealth : MonoBehaviour
             if (timer >= zombieAttackCooldown)
             {
                 currentHealth -= zombieDamage;
+;
                 currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
                 timer = 0f;
+
+                if (Ow != null && audioSource != null)
+                {
+                    audioSource.PlayOneShot(Ow);
+                }
 
                 //Debug.Log("Health: " + currentHealth);
                 UpdateVisuals();
