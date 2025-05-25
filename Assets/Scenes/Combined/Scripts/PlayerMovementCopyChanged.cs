@@ -26,6 +26,7 @@ public class PlayerMovementCC : MonoBehaviour
 
     private void Start()
     {
+        GetComponent<MeshRenderer>().enabled = false;
         controller = GetComponent<CharacterController>();
     }
 

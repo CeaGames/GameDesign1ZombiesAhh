@@ -1125,6 +1125,9 @@ MonoBehaviour:
   itemLayerMask:
     serializedVersion: 2
     m_Bits: 2048
+  medkitLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   doorFrameLayerMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -1136,6 +1139,7 @@ MonoBehaviour:
     m_Bits: 32768
   gunCamera: {fileID: 5570952966038507928}
   _numberOfPlanksText: {fileID: 3714136839185948797}
+  _playerHealth: {fileID: 0}
   _actionText: {fileID: 1641887104680221641}
   _leftClickImage: {fileID: 3010859749212777216}
   _rightClickImage: {fileID: 4627563512888255818}
