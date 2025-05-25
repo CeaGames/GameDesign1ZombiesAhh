@@ -7,6 +7,7 @@ public class zombieDetect : MonoBehaviour
     public DoorBarricade doorBarricade;
     public GameObject doorframe;
     public int zombieCount;
+    public bool playerInDoor;
 
     public float dpsFromZombies;
 
@@ -56,6 +57,10 @@ public class zombieDetect : MonoBehaviour
         {
             if (other.gameObject.layer == 9) // zombie
                 zombieCount--;
+
+            if (other.gameObject.layer == 6) // player
+            playerInDoor = false;
+            return;
         }
     }
 
@@ -65,6 +70,9 @@ public class zombieDetect : MonoBehaviour
         {
             if (other.gameObject.layer == 9) // zombie
             zombieCount++;
+
+            if (other.gameObject.layer == 6) // player
+                    playerInDoor = true;
             return;
         }
 
