@@ -10,8 +10,8 @@ public class MainManu : MonoBehaviour
     public TextMeshProUGUI mouseSensetivitySliderText;
 
     public float flooramount = 5;
-    public Slider floorAmountSlider;
-    public TextMeshProUGUI floorAmountSliderText;
+    //public Slider floorAmountSlider;
+    //public TextMeshProUGUI floorAmountSliderText;
 
     private void Start()
     {
@@ -21,8 +21,8 @@ public class MainManu : MonoBehaviour
     void Update()
     {
         // Update UI
-        floorAmountSliderText.text = floorAmountSlider.value.ToString();
-        flooramount = floorAmountSlider.value;
+        //floorAmountSliderText.text = floorAmountSlider.value.ToString();
+        //flooramount = floorAmountSlider.value;
         mouseSensetivitySliderText.text = mouseSensetivitySlider.value.ToString("0.00");
         mouseSensetivity = mouseSensetivitySlider.value * 1000;
 
