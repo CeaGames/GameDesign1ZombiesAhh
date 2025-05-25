@@ -51,7 +51,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (isDead == true && Input.GetMouseButtonDown(0)) 
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(0);
         }
     }
 
