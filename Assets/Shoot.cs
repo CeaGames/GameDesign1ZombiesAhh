@@ -42,12 +42,20 @@ public class Shoot : MonoBehaviour
 
     [SerializeField] int itemHoldingLimit = 3;
 
+    [SerializeField] private AudioClip HitZ;
+    [SerializeField] private AudioClip OpenChest;
+    [SerializeField] private AudioClip Backpack;
+    [SerializeField] private AudioClip Barricade;
+    private AudioSource audioSource;
+    //these add the audio clips
+
     private void Start()
     {
         UpdatePlankUI();
         _leftClickImage.gameObject.SetActive(false);
         _rightClickImage.gameObject.SetActive(false);
         _actionText.gameObject.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -126,6 +134,8 @@ public class Shoot : MonoBehaviour
         RaycastHit medkit;
         if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out open, range, drawerLayerMask))
         {
+            audioSource.clip = OpenChest;
+            audioSource.Play();
             Debug.Log("opening");
             // Try to get the Drawer component from the 'open' object
             Drawer drawer = open.collider.GetComponent<Drawer>();
@@ -140,7 +150,8 @@ public class Shoot : MonoBehaviour
         else if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out medkit, range, medkitLayerMask))
         {
             medkit.transform.gameObject.SetActive(false);
-
+            audioSource.clip = Backpack;
+            audioSource.Play();
             _playerHealth.currentHealth = _playerHealth.currentHealth + 30;
             _playerHealth.currentHealth = Mathf.Clamp(_playerHealth.currentHealth, 0, _playerHealth.maxHealth);
 
@@ -157,6 +168,8 @@ public class Shoot : MonoBehaviour
         {
             if (bonk.transform != null && items.Count > 0)
             {
+                audioSource.clip = HitZ;
+                audioSource.Play();
                 items.Remove(items[0]);
                 UpdatePlankUI();
 
@@ -178,6 +191,7 @@ public class Shoot : MonoBehaviour
         RaycastHit pickup;
         if ((Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out pickup, range, itemLayerMask)) && (items.Count < itemHoldingLimit))
         {
+
             Debug.Log(pickup.transform.name);
             items.Add(pickup.transform.gameObject.name);
             pickup.collider.gameObject.SetActive(false);
@@ -190,6 +204,8 @@ public class Shoot : MonoBehaviour
         {
             if (barricade.transform != null && items.Count > 0 && barricade.transform.GetComponentInChildren<zombieDetect>().zombieCount == 0 && !barricade.transform.GetComponentInChildren<zombieDetect>().playerInDoor)
             {
+                audioSource.clip = Barricade;
+                audioSource.Play();
                 items.Remove(items[0]);
                 barricade.collider.gameObject.GetComponent<DoorBarricade>().hp += barricade.collider.gameObject.GetComponent<DoorBarricade>().maxHp / 3;
                 UpdatePlankUI();
@@ -198,7 +214,7 @@ public class Shoot : MonoBehaviour
     }
     private void UpdatePlankUI()
     {
-        _numberOfPlanksText.text = "Planks:\n" + items.Count + " / " +itemHoldingLimit;
+        _numberOfPlanksText.text = "Planks:\n" + items.Count + " / " + itemHoldingLimit;
     }
 
 }
