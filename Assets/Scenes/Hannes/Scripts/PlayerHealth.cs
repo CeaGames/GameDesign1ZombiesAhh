@@ -134,6 +134,9 @@ public class PlayerHealth : MonoBehaviour
             youAreDeadText.SetActive(true);
         }
 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         GetComponent<PlayerMovementCC>().enabled = false;
         GetComponent<CharacterController>().enabled = false;
         transform.parent.GetComponentInChildren<PlayerLookCopy>().enabled = false;

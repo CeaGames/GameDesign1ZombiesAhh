@@ -12214,7 +12214,7 @@ PrefabInstance:
     - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: HitZ
       value: 
-      objectReference: {fileID: 8300000, guid: 5d426b599f307da4790f4048e1d48c6a, type: 3}
+      objectReference: {fileID: 8300000, guid: 6391d80f8a6f60041a70dfe302d20fa6, type: 3}
     - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: Pickup
       value: 

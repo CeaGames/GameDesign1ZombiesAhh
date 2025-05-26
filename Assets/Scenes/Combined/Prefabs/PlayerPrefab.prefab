@@ -1145,7 +1145,7 @@ MonoBehaviour:
   _leftClickImage: {fileID: 3010859749212777216}
   _rightClickImage: {fileID: 4627563512888255818}
   itemHoldingLimit: 3
-  HitZ: {fileID: 0}
+  HitZ: {fileID: 8300000, guid: 6391d80f8a6f60041a70dfe302d20fa6, type: 3}
   OpenChest: {fileID: 0}
   Backpack: {fileID: 0}
   Barricade: {fileID: 0}

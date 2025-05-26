@@ -7942,7 +7942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 979848312}
   m_Layer: 9
-  m_Name: GameObject
+  m_Name: zombie collection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12214,19 +12214,19 @@ PrefabInstance:
     - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: HitZ
       value: 
-      objectReference: {fileID: 8300000, guid: 5d426b599f307da4790f4048e1d48c6a, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: Backpack
       value: 
-      objectReference: {fileID: 8300000, guid: f9260ccf060fe1c478a7478d20e3b5e2, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: Barricade
       value: 
-      objectReference: {fileID: 8300000, guid: 08f9a57a7b532de43bbc3657089c1298, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: OpenChest
       value: 
-      objectReference: {fileID: 8300000, guid: e1a8f0ce032dde245b6688744f93d37f, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: _playerHealth
       value: 
