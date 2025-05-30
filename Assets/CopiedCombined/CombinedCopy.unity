@@ -3730,6 +3730,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 1673b1bbeec0cb7458bf5ad019d993ed, type: 2}
     - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: hannesScream
+      value: 
+      objectReference: {fileID: 8300000, guid: 87da0f0bceda3b247be5f44908a3d2fd, type: 3}
+    - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
       propertyPath: lvlGenScript
       value: 
       objectReference: {fileID: 608142216}
