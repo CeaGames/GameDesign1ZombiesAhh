@@ -12243,6 +12243,18 @@ PrefabInstance:
       propertyPath: medkitLayerMask.m_Bits
       value: 65536
       objectReference: {fileID: 0}
+    - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
+      propertyPath: doorFrameLayerMask.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
+      propertyPath: doorFrameAndDefault.m_Bits
+      value: 1025
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
+      propertyPath: doorframeAndDefault.m_Bits
+      value: 1025
+      objectReference: {fileID: 0}
     - target: {fileID: 6181120990210404585, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: delay
       value: 260

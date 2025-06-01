@@ -7,6 +7,7 @@ public class DoorBarricade : MonoBehaviour
 {
     public float hp;
     public float maxHp;
+    public bool isInTimedDoor;
 
     public GameObject[] planks;
 

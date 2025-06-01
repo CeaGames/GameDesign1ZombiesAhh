@@ -685,6 +685,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorFrame
       objectReference: {fileID: 0}
+    - target: {fileID: 7659564185516332623, guid: 54a0645a0e2af164f8947475807048f2, type: 3}
+      propertyPath: isInTimedDoor
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

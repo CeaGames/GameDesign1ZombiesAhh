@@ -21,6 +21,9 @@ public class Shoot : MonoBehaviour
     //a layermask to know when you are lookin at a doorframe that can be barricaded
     public LayerMask doorFrameLayerMask;
 
+    //a layermask to know when the doorframe you're looking at is actually behind an object
+    public LayerMask doorFrameAndDefault;
+
     //a layermask for bonking the naughty zombies
     public LayerMask zombieLayerMask;
 
@@ -206,7 +209,7 @@ public class Shoot : MonoBehaviour
         RaycastHit barricade;
         if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out barricade, range, doorFrameLayerMask))
         {
-            if (barricade.transform != null && items.Count > 0 && barricade.transform.GetComponentInChildren<zombieDetect>().zombieCount == 0 && !barricade.transform.GetComponentInChildren<zombieDetect>().playerInDoor)
+            if (barricade.transform != null && items.Count > 0 && barricade.transform.GetComponentInChildren<zombieDetect>().zombieCount == 0 && !barricade.transform.GetComponentInChildren<zombieDetect>().playerInDoor && !barricade.transform.GetComponent<DoorBarricade>().isInTimedDoor)
             {
                 audioSource.clip = Barricade;
                 audioSource.Play();
