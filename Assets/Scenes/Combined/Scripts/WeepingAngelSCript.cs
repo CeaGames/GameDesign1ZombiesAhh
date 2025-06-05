@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Audio;
 
@@ -25,11 +26,14 @@ public class WeepingAngelZombie : MonoBehaviour
     [SerializeField] private AudioClip hannesScream;
     private AudioSource audioSource;
 
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject yellowBean;
+
     void Start()
     {
 
         audioSource = GetComponent<AudioSource>();
-        
+
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material = yellowMaterial;
         currentHealth = maxHealth;
@@ -43,17 +47,24 @@ public class WeepingAngelZombie : MonoBehaviour
 
     void Update()
     {
+        float distance = Vector3.Distance(player.transform.position, yellowBean.transform.position);
 
         if (IsVisibleToPlayer())
         {
             agent.isStopped = true;
             meshRenderer.material = greyMaterial;
-
-            audioSource.clip = hannesScream;
-            audioSource.Play();
         }
         else
         {
+            audioSource.volume = 2.5f - (distance * .5f);
+
+
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = hannesScream;
+                audioSource.Play();
+            }
+
             meshRenderer.material = yellowMaterial;
             agent.isStopped = false;
             if (target != null)
@@ -101,4 +112,6 @@ public class WeepingAngelZombie : MonoBehaviour
 
         agent.Warp(randomPosition);
     }
+
+
 }

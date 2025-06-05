@@ -3722,13 +3722,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 618542319}
+    - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1826323875}
     - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: yellowBean
+      value: 
+      objectReference: {fileID: 1477766201}
+    - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
       propertyPath: greyMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 1673b1bbeec0cb7458bf5ad019d993ed, type: 2}
+    - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: hannesScream
+      value: 
+      objectReference: {fileID: 8300000, guid: 87da0f0bceda3b247be5f44908a3d2fd, type: 3}
     - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
       propertyPath: lvlGenScript
       value: 
@@ -5358,6 +5370,11 @@ PrefabInstance:
       addedObject: {fileID: 1026081679}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06dc417dd86bf3d4085e8314ffdadb11, type: 3}
+--- !u!1 &618542319 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3615854959433803344, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
+  m_PrefabInstance: {fileID: 1515963987}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &625015106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1201042305672583782, guid: 06dc417dd86bf3d4085e8314ffdadb11, type: 3}
@@ -11803,6 +11820,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 990422968}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1477766201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5822172686383412158, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+  m_PrefabInstance: {fileID: 458028090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1481136048
 GameObject:
   m_ObjectHideFlags: 0
