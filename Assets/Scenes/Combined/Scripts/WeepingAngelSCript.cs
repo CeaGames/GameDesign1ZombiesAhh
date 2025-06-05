@@ -47,7 +47,7 @@ public class WeepingAngelZombie : MonoBehaviour
 
     void Update()
     {
-        float distance = Vector3.Distance(player.transform.position, yellowBean.transform.position);
+        float distance = Vector3.Distance(player.transform.position, transform.position);
 
         if (IsVisibleToPlayer())
         {
