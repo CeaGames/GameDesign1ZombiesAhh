@@ -3,7 +3,6 @@ using Unity.VisualScripting;
 
 using UnityEngine;
 using UnityEngine.Audio;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class DoorBarricade : MonoBehaviour
 {
