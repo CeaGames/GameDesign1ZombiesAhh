@@ -265,8 +265,8 @@ MonoBehaviour:
   openingSpeed: 5
   drawerOpen: 0
   previouslyOpen: 0
-  OpenChest: {fileID: 8300000, guid: b05c7a43c63e54e43be187f37790d3cd, type: 3}
-  CloseChest: {fileID: 8300000, guid: 0b6b8b5a3cf872f4d8b7a38e1d38a814, type: 3}
+  OpenChest: {fileID: 8300000, guid: 9f7769b80abe426428fda0e318e74f71, type: 3}
+  CloseChest: {fileID: 8300000, guid: 13e2937a394c980428c100eb32a45798, type: 3}
 --- !u!65 &4942321796383235784
 BoxCollider:
   m_ObjectHideFlags: 0
