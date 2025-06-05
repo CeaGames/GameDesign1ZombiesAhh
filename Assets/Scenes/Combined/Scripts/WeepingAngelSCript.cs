@@ -56,7 +56,7 @@ public class WeepingAngelZombie : MonoBehaviour
         }
         else
         {
-            audioSource.volume = 2.5f - (distance * .5f);
+            audioSource.volume = 1.5f - (distance * .25f);
 
 
             if (!audioSource.isPlaying)
