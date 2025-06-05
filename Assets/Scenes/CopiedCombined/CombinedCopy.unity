@@ -12218,7 +12218,7 @@ PrefabInstance:
     - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: Pickup
       value: 
-      objectReference: {fileID: 8300000, guid: 70e6ebaf49a78d04ab7b9ddb5f8527b5, type: 3}
+      objectReference: {fileID: 8300000, guid: c20756c67f0ee624887995c136cb811c, type: 3}
     - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: Backpack
       value: 
@@ -12226,11 +12226,11 @@ PrefabInstance:
     - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: Barricade
       value: 
-      objectReference: {fileID: 8300000, guid: 08f9a57a7b532de43bbc3657089c1298, type: 3}
+      objectReference: {fileID: 8300000, guid: c20756c67f0ee624887995c136cb811c, type: 3}
     - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: OpenChest
       value: 
-      objectReference: {fileID: 8300000, guid: e1a8f0ce032dde245b6688744f93d37f, type: 3}
+      objectReference: {fileID: 8300000, guid: b05c7a43c63e54e43be187f37790d3cd, type: 3}
     - target: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: _playerHealth
       value: 
