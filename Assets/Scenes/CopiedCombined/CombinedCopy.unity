@@ -3750,12 +3750,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1236223132}
     - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: ApproachSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d3ab9eaf373abc4196c289a61d8fd5b, type: 3}
+    - target: {fileID: 2370110177275357989, guid: 580407728a43be04ba44463a752f69b7, type: 3}
       propertyPath: yellowMaterial
       value: 
       objectReference: {fileID: 2100000, guid: ce8de733e34b74946a1bbba2be961cdf, type: 2}
     - target: {fileID: 5822172686383412158, guid: 580407728a43be04ba44463a752f69b7, type: 3}
       propertyPath: m_Name
       value: WeepingAngel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8379123449326529740, guid: 580407728a43be04ba44463a752f69b7, type: 3}
+      propertyPath: m_Pitch
+      value: 1.11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

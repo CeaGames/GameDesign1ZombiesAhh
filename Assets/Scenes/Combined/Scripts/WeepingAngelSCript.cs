@@ -23,11 +23,12 @@ public class WeepingAngelZombie : MonoBehaviour
     private NavMeshAgent agent;
     private MeshRenderer meshRenderer;
 
-    [SerializeField] private AudioClip hannesScream;
+    [SerializeField] private AudioClip ApproachSound;
     private AudioSource audioSource;
 
     [SerializeField] private GameObject player;
-    [SerializeField] private GameObject yellowBean;
+
+    private float distance = 100;
 
     void Start()
     {
@@ -47,7 +48,7 @@ public class WeepingAngelZombie : MonoBehaviour
 
     void Update()
     {
-        float distance = Vector3.Distance(player.transform.position, transform.position);
+        distance = Vector3.Distance(player.transform.position, transform.position);
 
         if (IsVisibleToPlayer())
         {
@@ -61,7 +62,7 @@ public class WeepingAngelZombie : MonoBehaviour
 
             if (!audioSource.isPlaying)
             {
-                audioSource.clip = hannesScream;
+                audioSource.clip = ApproachSound;
                 audioSource.Play();
             }
 

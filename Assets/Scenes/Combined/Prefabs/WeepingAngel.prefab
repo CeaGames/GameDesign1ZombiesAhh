@@ -156,7 +156,9 @@ MonoBehaviour:
   damagePerSecond: 1
   yellowMaterial: {fileID: 0}
   greyMaterial: {fileID: 0}
-  hannesScream: {fileID: 8300000, guid: e5dff55c116a40746bcced9e05d75131, type: 3}
+  hannesScream: {fileID: 8300000, guid: 7d3ab9eaf373abc4196c289a61d8fd5b, type: 3}
+  player: {fileID: 0}
+  yellowBean: {fileID: 0}
 --- !u!82 &8379123449326529740
 AudioSource:
   m_ObjectHideFlags: 0
