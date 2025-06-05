@@ -5,7 +5,7 @@ using TMPro;
 
 public class MainManu : MonoBehaviour
 {
-    public float mouseSensetivity = 0.1f;
+    public float mouseSensetivity;
     public Slider mouseSensetivitySlider;
     public TextMeshProUGUI mouseSensetivitySliderText;
 
@@ -13,12 +13,24 @@ public class MainManu : MonoBehaviour
     //public Slider floorAmountSlider;
     //public TextMeshProUGUI floorAmountSliderText;
 
+    private void Start()
+    {
+        if (!SettingsCarrier.SettingsHaveStarted)
+        {
+            SettingsCarrier.SettingsHaveStarted = true;
+            mouseSensetivity = 0.3f;
+        }
+
+        mouseSensetivitySlider.value = SettingsCarrier.mouseSensetivity /1000;
+    }
+
     void Update()
     {
         // Update UI
         //floorAmountSliderText.text = floorAmountSlider.value.ToString();
         //flooramount = floorAmountSlider.value;
         mouseSensetivitySliderText.text = mouseSensetivitySlider.value.ToString("0.00");
+
         mouseSensetivity = mouseSensetivitySlider.value * 1000;
 
         SettingsCarrier.levelAmount = (int)flooramount -1;
@@ -27,7 +39,7 @@ public class MainManu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
