@@ -46,7 +46,6 @@ public class Shoot : MonoBehaviour
     [SerializeField] int itemHoldingLimit = 3;
 
     [SerializeField] private AudioClip HitZ;
-    [SerializeField] private AudioClip OpenChest;
     [SerializeField] private AudioClip Backpack;
     [SerializeField] private AudioClip Barricade;
     [SerializeField] private AudioClip Pickup;
@@ -141,8 +140,6 @@ public class Shoot : MonoBehaviour
             Debug.Log("opening");
             // Try to get the Drawer component from the 'open' object
             Drawer drawer = open.collider.GetComponent<Drawer>();
-            audioSource.clip = OpenChest;
-            audioSource.Play();
             Debug.Log("opening");
             if (drawer != null)
             {
