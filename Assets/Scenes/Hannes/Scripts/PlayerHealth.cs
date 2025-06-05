@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
 
     public float currentHealth;
     private float timer;
+    public bool hasWon = false;
     private bool isDead = false;
 
     [SerializeField] private AudioClip Ow;
@@ -66,7 +67,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (((1 << other.gameObject.layer) & zombieLayer) != 0 && !isDead)
+        if (((1 << other.gameObject.layer) & zombieLayer) != 0 && !isDead && !hasWon)
         {
             if (timer >= zombieAttackCooldown)
             {

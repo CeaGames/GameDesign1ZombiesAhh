@@ -25,5 +25,7 @@ public class HelicopterWinScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         _canvas.enabled = true;
+
+        other.gameObject.GetComponent<PlayerHealth>().hasWon = true;
     }
 }
