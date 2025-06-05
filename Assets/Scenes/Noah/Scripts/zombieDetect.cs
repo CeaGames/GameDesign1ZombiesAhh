@@ -72,7 +72,10 @@ public class zombieDetect : MonoBehaviour
             zombieCount++;
 
             if (other.gameObject.layer == 6) // player
+            {
                     playerInDoor = true;
+                    GetComponentInParent<DoorBarricade>().isInTimedDoor = false;
+            }
             return;
         }
 
