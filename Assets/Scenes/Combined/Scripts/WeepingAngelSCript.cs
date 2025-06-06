@@ -28,7 +28,8 @@ public class WeepingAngelZombie : MonoBehaviour
 
     [SerializeField] private GameObject player;
 
-    private float distance = 100;
+    private Vector3 distancevector;
+    private float perceivedDistance = 100;
 
     void Start()
     {
@@ -48,7 +49,9 @@ public class WeepingAngelZombie : MonoBehaviour
 
     void Update()
     {
-        distance = Vector3.Distance(player.transform.position, transform.position);
+        //distance vector made custom to flatten the area in which zombie can be heard
+        distancevector = (player.transform.position - transform.position);
+        perceivedDistance = Vector3.Magnitude(new Vector3(distancevector.x, distancevector.y * 3, distancevector.z));
 
         if (IsVisibleToPlayer())
         {
@@ -57,7 +60,7 @@ public class WeepingAngelZombie : MonoBehaviour
         }
         else
         {
-            audioSource.volume = 1.5f - (distance * .25f);
+            audioSource.volume = 1.5f - (perceivedDistance * .15f);
 
 
             if (!audioSource.isPlaying)
