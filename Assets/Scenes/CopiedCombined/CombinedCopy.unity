@@ -12237,18 +12237,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4236770906469093938, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
-      propertyPath: time
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 6181120990210404585, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: lvlGenScript
       value: 
       objectReference: {fileID: 608142216}
-    - target: {fileID: 6293940741905721337, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 137
-      objectReference: {fileID: 0}
     - target: {fileID: 6346712848732935254, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.34

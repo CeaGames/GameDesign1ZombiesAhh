@@ -4,16 +4,36 @@ using UnityEngine.SceneManagement;
 
 public class PauseGame : MonoBehaviour
 {
-    private void Update()
+    public GameObject pauseMenuUI; // Assign in Inspector
+
+    private bool isPaused = false;
+
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-
-            SceneManager.LoadScene(0);
-            
+            if (isPaused)
+                ResumeGame();
+            else
+                PPauseGame();
         }
-        
+    }
+
+    public void ResumeGame()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        isPaused = false;
+    }
+
+    private void PPauseGame()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        isPaused = true;
     }
 }

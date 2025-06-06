@@ -33,6 +33,13 @@ public class PlayerLookCopy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (SettingsCarrier.mouseSensetivity != 0)
+        {
+            MouseSensX = SettingsCarrier.mouseSensetivity;
+            MouseSensY = SettingsCarrier.mouseSensetivity;
+        }
+
         //mouse input
         float mouseX = Input.GetAxisRaw ("Mouse X") * Time.deltaTime * MouseSensX;
         float mouseY = Input.GetAxisRaw ("Mouse Y") * Time.deltaTime * MouseSensY;
