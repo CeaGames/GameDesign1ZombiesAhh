@@ -41,8 +41,9 @@ public class PlayerLookCopy : MonoBehaviour
         }
 
         //mouse input
-        float mouseX = Input.GetAxisRaw ("Mouse X") * Time.deltaTime * MouseSensX;
-        float mouseY = Input.GetAxisRaw ("Mouse Y") * Time.deltaTime * MouseSensY;
+        float mouseX = Input.GetAxis("Mouse X")/50 * MouseSensX;
+        float mouseY = Input.GetAxis("Mouse Y")/50 * MouseSensY;
+
 
         yRotation += mouseX;
         xRotation -= mouseY;

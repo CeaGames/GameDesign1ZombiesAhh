@@ -9958,6 +9958,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1455285038380978868, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
   m_PrefabInstance: {fileID: 1515963987}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1236223136 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4914294930150983992, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
+  m_PrefabInstance: {fileID: 1515963987}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26eaffe75babed94f860414212f09ad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1236371945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12237,6 +12248,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4125614478925164781, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
+      propertyPath: lookScript
+      value: 
+      objectReference: {fileID: 1236223136}
+    - target: {fileID: 4125614478925164781, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
+      propertyPath: shootScript
+      value: 
+      objectReference: {fileID: 1515963988}
     - target: {fileID: 6181120990210404585, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
       propertyPath: lvlGenScript
       value: 
@@ -12290,6 +12309,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
+--- !u!114 &1515963988 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3233331036373761610, guid: 60c1a5e08ccf47f4bb55270495771db9, type: 3}
+  m_PrefabInstance: {fileID: 1515963987}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f283d0bcefb1b9439d75b7acaae7a91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1516031510
 GameObject:
   m_ObjectHideFlags: 0
